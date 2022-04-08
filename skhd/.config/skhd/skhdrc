@@ -2,16 +2,16 @@
 lctrl + alt + cmd - return : open -n -a Alacritty
 
 # focus window
-lctrl + alt + cmd - h : yabai -m window --focus west
-lctrl + alt + cmd - j : yabai -m window --focus south
-lctrl + alt + cmd - k : yabai -m window --focus north
-lctrl + alt + cmd - l : yabai -m window --focus east
+cmd + alt - h : yabai -m window --focus west
+cmd + alt - j : yabai -m window --focus south
+cmd + alt - k : yabai -m window --focus north
+cmd + alt - l : yabai -m window --focus east
 
 # swap managed window
-lctrl + alt + cmd + shift - w : yabai -m window --swap north
-lctrl + alt + cmd + shift - a : yabai -m window --swap west
-lctrl + alt + cmd + shift - s : yabai -m window --swap south
-lctrl + alt + cmd + shift - d : yabai -m window --swap east
+cmd + alt + shift - w : yabai -m window --swap north
+cmd + alt + shift - a : yabai -m window --swap west
+cmd + alt + shift - s : yabai -m window --swap south
+cmd + alt + shift - d : yabai -m window --swap east
 
 # move managed window
 lctrl + alt + cmd - w : yabai -m window --warp north
@@ -69,13 +69,13 @@ lctrl + alt + cmd + shift - p : yabai -m window --display recent; yabai -m displ
 # shift + ctrl - s : yabai -m window --move rel:0:20
 
 # resize windows
-lctrl + alt + cmd + shift - h : yabai -m window --resize left:-50:0; \
+ctrl + alt - h : yabai -m window --resize left:-50:0; \
                   yabai -m window --resize right:-50:0
-lctrl + alt + cmd + shift - j : yabai -m window --resize bottom:0:50; \
+ctrl + alt - j : yabai -m window --resize bottom:0:50; \
                   yabai -m window --resize top:0:50
-lctrl + alt + cmd + shift - k : yabai -m window --resize top:0:-50; \
+ctrl + alt - k : yabai -m window --resize top:0:-50; \
                   yabai -m window --resize bottom:0:-50
-lctrl + alt + cmd + shift - l : yabai -m window --resize right:50:0; \
+ctrl + alt - l : yabai -m window --resize right:50:0; \
                   yabai -m window --resize left:50:0
 
 # set insertion point in focused container
