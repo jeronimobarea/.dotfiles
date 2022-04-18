@@ -48,6 +48,8 @@ endif
 " Required:
 cal plug#begin(expand('~/./plugged'))
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
