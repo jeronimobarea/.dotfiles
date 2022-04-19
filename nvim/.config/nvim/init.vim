@@ -48,6 +48,7 @@ endif
 " Required:
 cal plug#begin(expand('~/./plugged'))
 
+Plug 'f-person/git-blame.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'neovim/nvim-lspconfig'
