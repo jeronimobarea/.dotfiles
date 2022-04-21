@@ -1,156 +1,91 @@
-" Required:
-cal plug#begin(expand('~/./plugged'))
-
-Plug 'f-person/git-blame.nvim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-fugitive'
-Plug 'neovim/nvim-lspconfig'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'Raimondi/delimitMate'
-Plug 'dense-analysis/ale'
-Plug 'Yggdroot/indentLine'
-
-Plug 'vim-scripts/CSApprox'
-
-Plug 'tomasr/molokai'
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-
-"" Snippets
-Plug 'SirVer/ultisnips'
-
-"*****************************************************************************
-"*****************************************************************************
-
-autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
-
-call plug#end()
-
-" Required:
-
-
-
-"*****************************************************************************
-"" Basic Setup
-"*****************************************************************************"
-"" Encoding
-filetype plugin indent on
-
-set guicursor=i:block
-
+" Visual
+syntax on
 set number
 set relativenumber
+set guicursor=i:block
+set cc=80
+set showmatch
 
+" Text search
 set ignorecase
 set smartcase
 set hlsearch
-set cc=80
+set incsearch
+set ruler
 
+" Common
 set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=utf-8
 set ttyfast
 
-"" Fix backspace indent
-set backspace=indent,eol,start
-
-"" Tabs. May be overridden by autocmd rules
+" Tabs
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-"" Map leader to ,
-let mapleader=','
+call plug#begin(expand('~/.vim/plugged'))
 
-"" Enable hidden buffers
-set hidden
+" Git
+Plug 'f-person/git-blame.nvim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
-"" Searching
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
+" Cmp
+" Use release branch (recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-set fileformats=unix,dos,mac
+" Lsp
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
 
-" session management
-let g:session_directory = "~/./session"
-let g:session_autoload = "no"
-let g:session_autosave = "no"
-let g:session_command_aliases = 1
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-"*****************************************************************************
-"" Visual Settings
-"*****************************************************************************
-syntax on
-set ruler
-set number
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
-let no_buffers_menu=1
-colorscheme molokai
+" Snippets
+Plug 'Raimondi/delimitMate' " Automatically closes quotes, parenthesis, etc.
+Plug 'sbdchd/neoformat'
 
+" Theme
+Plug 'Yggdroot/indentLine' " Add's a line in every indentation
+Plug 'gruvbox-community/gruvbox'
+Plug 'nvim-lualine/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+Plug 'kyazdani42/nvim-web-devicons'
 
-" Better command line completion 
-set wildmenu
+" Languages stuff
+Plug 'darrikonn/vim-gofmt'
 
-" mouse support
-set mouse=a
+call plug#end()
 
-set mousemodel=popup
-set t_Co=256
-set guioptions=egmrti
-set gfn=Monospace\ 10
+" Plugin config
+lua require("configs")
 
-if has("gui_running")
-  if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-    set transparency=7
-  endif
-else
-  let g:CSApprox_loaded = 1
+" Coc
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-  " IndentLine
-  let g:indentLine_enabled = 1
-  let g:indentLine_concealcursor = ''
-  let g:indentLine_char = '┆'
-  let g:indentLine_faster = 1
+" Themes
+" Gruvbox
+colorscheme gruvbox
 
-  
-  if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-  else
-    if $TERM == 'xterm'
-      set term=xterm-256color
-    endif
-  endif
-  
-endif
+" Treesitter
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 
+" Telescope
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-if &term =~ '256color'
-  set t_ut=
-endif
-
-
-"" Disable the blinking cursor.
-set gcr=a:blinkon0
-
-set scrolloff=3
-
-
-"" Status bar
-set laststatus=2
-
-"" Use modeline overrides
-set modeline
-set modelines=10
-
-set title
-set titleold="Terminal"
-set titlestring=%F
-
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
