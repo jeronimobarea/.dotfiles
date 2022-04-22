@@ -1,8 +1,8 @@
 window:
   dynamic_padding: true
   padding:
-    x: 16
-    y: 16
+    x: 4
+    y: 4
   decorations: none
   opacity: 0.65
   background_opacity: 0.5

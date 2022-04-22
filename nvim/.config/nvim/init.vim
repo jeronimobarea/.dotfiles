@@ -1,34 +1,10 @@
-" Visual
-syntax on
-set number
-set relativenumber
-set guicursor=i:block
-set cc=80
-set showmatch
-
-" Text search
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
-set ruler
-
-" Common
-set encoding=utf-8
-set ttyfast
-
-" Tabs
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-
 call plug#begin(expand('~/.vim/plugged'))
 
 " Git
 Plug 'f-person/git-blame.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'kdheepak/lazygit.nvim'
 
 " Cmp
 " Use release branch (recommend)
@@ -64,17 +40,13 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " Languages stuff
-Plug 'darrikonn/vim-gofmt'
+Plug 'fatih/vim-go'
+
+" Debbuger
+Plug 'mfussenegger/nvim-dap'
 
 call plug#end()
 
 " Plugin config
 lua require("configs")
-
-" Themes
-" Gruvbox
-colorscheme gruvbox
-
-" Treesitter
-lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 
