@@ -31,4 +31,5 @@ set autoindent
 " Themes
 " Gruvbox
 colorscheme gruvbox
+hi Normal guibg=none
 

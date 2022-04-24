@@ -13,4 +13,5 @@ brew "lua"
 brew "luajit"
 brew "koekeishiya/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
+brew "lazygit"
 
