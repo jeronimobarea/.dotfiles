@@ -2,6 +2,12 @@ alias vim="nvim"
 alias vi="nvim"
 alias cat="bat"
 
+alias ls="lsd"
+alias l="ls -l"
+alias la="ls -a"
+alias lla="ls -la"
+alias lt="ls --tree"
+
 # If you come from bash robbyrussell you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
