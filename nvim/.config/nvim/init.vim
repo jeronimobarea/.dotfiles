@@ -2,12 +2,10 @@ call plug#begin(expand('~/.vim/plugged'))
 
 " Git
 Plug 'f-person/git-blame.nvim'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive' Plug 'airblade/vim-gitgutter'
 Plug 'kdheepak/lazygit.nvim'
 
 " Cmp
-" Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Lsp
