@@ -6,6 +6,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'kdheepak/lazygit.nvim'
 
+" Tmux
+Plug 'christoomey/vim-tmux-navigator'
+
 " Cmp
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
