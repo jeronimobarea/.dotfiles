@@ -20,6 +20,7 @@ Plug 'hrsh7th/nvim-cmp'
 
 " Nerdtree
 Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
