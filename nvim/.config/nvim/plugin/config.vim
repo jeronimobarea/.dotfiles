@@ -5,6 +5,8 @@ set relativenumber
 set guicursor=i:block
 set cc=80
 set showmatch
+set equalalways " Always set split tabs with equal
+autocmd VimResized * wincmd =
 
 " Text search
 set ignorecase
