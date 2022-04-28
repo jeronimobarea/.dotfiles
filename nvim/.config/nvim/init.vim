@@ -39,7 +39,6 @@ Plug 'sbdchd/neoformat'
 Plug 'Yggdroot/indentLine' " Add's a line in every indentation
 Plug 'gruvbox-community/gruvbox'
 Plug 'nvim-lualine/lualine.nvim'
-" If you want to have icons in your statusline choose one of these
 Plug 'kyazdani42/nvim-web-devicons'
 
 " Languages stuff
