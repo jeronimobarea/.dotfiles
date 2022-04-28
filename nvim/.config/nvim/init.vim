@@ -9,14 +9,14 @@ Plug 'kdheepak/lazygit.nvim'
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
 
-" Cmp
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " Lsp
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/nvim-cmp'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/nvim-cmp'
+" Languages stuff
+Plug 'fatih/vim-go'
 
 " Nerdtree
 Plug 'preservim/nerdtree'
@@ -40,9 +40,6 @@ Plug 'Yggdroot/indentLine' " Add's a line in every indentation
 Plug 'gruvbox-community/gruvbox'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-
-" Languages stuff
-Plug 'fatih/vim-go'
 
 " Debbuger
 Plug 'mfussenegger/nvim-dap'
