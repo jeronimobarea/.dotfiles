@@ -6,5 +6,8 @@ nmap <silent> gr <Plug>(coc-references)
 let g:coc_global_extensions = [
     \ 'coc-snippets',
     \ 'coc-go',
+    \ 'coc-json',
+    \ 'coc-sh',
+    \ 'coc-yaml',
 \]
 

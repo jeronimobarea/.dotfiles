@@ -1,0 +1,9 @@
+{
+    "go.goplsOptions": {
+        "buildFlags": ["-tags=inegration"],
+        "env": {
+            "GOFLAGS": "-tags=integration"
+        }
+    },
+    "diagnostic.checkCurrentLine": true
+}
