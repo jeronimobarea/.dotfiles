@@ -19,6 +19,7 @@ set ruler
 filetype plugin indent on
 set encoding=utf-8
 set ttyfast
+set autochdir
 
 " Ignore files
 set wildignore+=**/.git/*
@@ -34,4 +35,6 @@ set autoindent
 " Gruvbox
 colorscheme gruvbox
 hi Normal guibg=none
+
+noremap <leader>t <cmd>belowright 20split term://zsh<cr>
 
