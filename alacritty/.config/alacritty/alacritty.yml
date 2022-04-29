@@ -4,8 +4,7 @@ window:
     x: 4
     y: 4
   decorations: none
-  opacity: 0.7
-  background_opacity: 0.7
+  opacity: 0.92
   dynamic_title: false
 scrolling:
   # Maximum number of lines in the scrollback buffer.
