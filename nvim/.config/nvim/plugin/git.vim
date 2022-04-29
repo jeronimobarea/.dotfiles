@@ -9,3 +9,5 @@ nmap <leader>gs :G<CR>
 " setup mapping to call :LazyGit
 nnoremap <silent> <leader>gg :LazyGit<CR>
 
+autocmd BufEnter * :lua require('lazygit.utils').project_root_dir()
+
