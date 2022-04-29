@@ -40,6 +40,8 @@ Plug 'Yggdroot/indentLine' " Add's a line in every indentation
 Plug 'gruvbox-community/gruvbox'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Debbuger
 Plug 'mfussenegger/nvim-dap'
