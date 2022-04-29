@@ -37,4 +37,6 @@ colorscheme gruvbox
 hi Normal guibg=none
 
 noremap <leader>t <cmd>belowright 20split term://zsh<cr>
+noremap <leader>q <cmd>:q<cr>
+tnoremap <Esc> <C-\><C-n>
 
