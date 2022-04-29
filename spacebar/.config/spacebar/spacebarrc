@@ -5,7 +5,7 @@ spacebar -m config display                     main
 spacebar -m config height                      26
 
 spacebar -m config title                       on
-spacebar -m config spaces                      on
+spacebar -m config spaces                      off
 spacebar -m config clock                       off
 spacebar -m config power                       on
 
