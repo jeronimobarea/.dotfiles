@@ -38,6 +38,7 @@ au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 " Gruvbox
+set termguicolors
 colorscheme gruvbox
 hi Normal guibg=none
 let g:gruvbox_contrast_dark = 'hard'
