@@ -20,7 +20,7 @@ set ruler
 " Common
 filetype plugin indent on
 set ttyfast
-autocmd BufEnter * silent! :lcd%:p:h " Automatically change the current directory
+" autocmd BufEnter * silent! :lcd%:p:h " Automatically change the current directory
 
 " Ignore files
 set wildignore+=**/.git/*
