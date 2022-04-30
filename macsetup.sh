@@ -17,4 +17,5 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 brew services start yabai
 brew services start skhd
+brew services start spacebar
 
