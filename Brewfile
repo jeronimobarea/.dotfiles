@@ -16,4 +16,5 @@ brew "koekeishiya/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
 brew "lazygit"
 brew "fd"
+brew "neofetch"
 
