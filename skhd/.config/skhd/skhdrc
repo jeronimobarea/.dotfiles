@@ -1,5 +1,7 @@
 # open terminal
 cmd + alt - t : open -n -a Alacritty
+# open browser
+cmd + alt - f : open -n -a Firefox
 # balance size of windows
 cmd + alt - b : yabai -m space --balance
 
