@@ -20,9 +20,12 @@ nmap <silent> cn <Plug>(coc-rename)
 
 let g:coc_global_extensions = [
     \ 'coc-snippets',
-    \ 'coc-go',
     \ 'coc-json',
-    \ 'coc-sh',
     \ 'coc-yaml',
+    \ 'coc-docker',
+    \ 'coc-sh',
+    \ 'coc-sql',
+    \ 'coc-go',
+    \ 'coc-pyright',
 \]
 
