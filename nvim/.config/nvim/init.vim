@@ -2,7 +2,6 @@ call plug#begin(expand('~/.vim/plugged'))
 
 " Git
 Plug 'f-person/git-blame.nvim'
-Plug 'tpope/vim-fugitive' 
 Plug 'airblade/vim-gitgutter'
 Plug 'kdheepak/lazygit.nvim'
 
@@ -17,10 +16,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'hrsh7th/nvim-cmp'
 " Languages stuff
 Plug 'fatih/vim-go'
-
-" Nerdtree
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -42,8 +37,6 @@ Plug 'Yggdroot/indentLine' " Add's a line in every indentation
 Plug 'gruvbox-community/gruvbox'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Debbuger
 Plug 'mfussenegger/nvim-dap'
