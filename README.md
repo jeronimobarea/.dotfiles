@@ -20,6 +20,7 @@ In case you want to remove the configurations just run `./cleanenv` this will un
 - Terminal emulator: [Alacritty](https://github.com/alacritty/alacritty)
 - Shell: [Zsh](https://ohmyz.sh/)
 - Window manager: [Yabai](https://github.com/koekeishiya/yabai)
+- Top bar: [Spacebar](https://github.com/cmacrae/spacebar)
 - Shortcuts: [Skhd](https://github.com/koekeishiya/skhd)
 - Text editor: [Neovim](https://neovim.io/)
 - Terminal multiplexer: [Tmux](https://github.com/tmux/tmux)
