@@ -38,9 +38,6 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
-" Debbuger
-Plug 'mfussenegger/nvim-dap'
-
 call plug#end()
 
 " Plugin config
