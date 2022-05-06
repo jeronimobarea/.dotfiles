@@ -9,7 +9,7 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Lsp
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocUpdate'}
 " Plug 'neovim/nvim-lspconfig'
 " Plug 'hrsh7th/cmp-nvim-lsp'
 " Plug 'hrsh7th/cmp-buffer'
