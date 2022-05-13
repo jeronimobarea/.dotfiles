@@ -8,7 +8,6 @@ set showmatch
 set cursorline
 
 " Always set split tabs equally even when nvim is resized
-set equalalways 
 autocmd VimResized * wincmd =
 
 " Text search
