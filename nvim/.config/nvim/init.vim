@@ -34,6 +34,8 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 " Snippets
 Plug 'L3MON4D3/LuaSnip'
 Plug 'Raimondi/delimitMate' " Automatically closes quotes, parenthesis, etc.
+
+" Prettier
 Plug 'sbdchd/neoformat'
 
 " Theme
