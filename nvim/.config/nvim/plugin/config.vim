@@ -48,3 +48,6 @@ set background=dark
 noremap <space>t <cmd>belowright 20split term://zsh<cr>
 noremap <space>q <cmd>:q<cr>
 tnoremap <Esc> <C-\><C-n>
+
+" Prettier
+autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
