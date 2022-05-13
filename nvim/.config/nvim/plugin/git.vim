@@ -7,7 +7,7 @@ nmap <leader>gu :diffget //2<CR>
 nmap <leader>gs :G<CR>
 
 " setup mapping to call :LazyGit
-nnoremap <silent> <leader>gg :LazyGit<CR>
+nnoremap <silent> <space>gg :LazyGit<CR>
 
 autocmd BufEnter * :lua require('lazygit.utils').project_root_dir()
 
