@@ -46,8 +46,6 @@ let g:gruvbox_contrast_dark = 'hard'
 set background=dark
 
 " Remaps
-noremap <leader>t <cmd>belowright 20split term://zsh<cr>
-noremap <leader>q <cmd>:q<cr>
+noremap <space>t <cmd>belowright 20split term://zsh<cr>
+noremap <space>q <cmd>:q<cr>
 tnoremap <Esc> <C-\><C-n>
-nnoremap <leader>sv :source $MYVIMRC<CR>
-
