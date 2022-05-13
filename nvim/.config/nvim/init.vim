@@ -9,11 +9,12 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Lsp
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocUpdate'}
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'hrsh7th/cmp-nvim-lsp'
-" Plug 'hrsh7th/cmp-buffer'
-" Plug 'hrsh7th/nvim-cmp'
+" Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': ':CocUpdate'}
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
 " Languages stuff
 Plug 'fatih/vim-go'
 
@@ -29,6 +30,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " Snippets
+Plug 'L3MON4D3/LuaSnip'
 Plug 'Raimondi/delimitMate' " Automatically closes quotes, parenthesis, etc.
 Plug 'sbdchd/neoformat'
 

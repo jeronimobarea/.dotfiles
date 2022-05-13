@@ -5,6 +5,7 @@ set relativenumber
 set guicursor=i:block
 set cc=80
 set showmatch
+set cursorline
 
 " Always set split tabs equally even when nvim is resized
 set equalalways 
