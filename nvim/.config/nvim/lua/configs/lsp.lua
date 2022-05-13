@@ -3,10 +3,19 @@ require("nvim-lsp-installer").setup {
 }
 
 local cmp = require("cmp")
+local source_mapping = {
+    buffer = "[Buffer]",
+    nvim_lsp = "[LSP]",
+    nvim_lua = "[Lua]",
+    path = "[Path]",
+}
 
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+local lspkind = require("lspkind")
 
 cmp.setup({
     snippet = {
@@ -25,6 +34,14 @@ cmp.setup({
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
+    formatting = {
+        format = function(entry, vim_item)
+            vim_item.kind = lspkind.presets.default[vim_item.kind]
+            local menu = source_mapping[entry.source.name]
+            vim_item.menu = menu
+            return vim_item
+        end,
+    },
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" },
@@ -63,13 +80,47 @@ end
 
 local servers = { 'pyright', 'rust_analyzer', 'gopls', 'sumneko_lua' }
 for _, lsp in pairs(servers) do
-    require("lspconfig")[lsp].setup {
-        on_attach = on_attach,
-        capabilities = capabilities,
-    }
+    if lsp == "sumneko_lua"
+    then
+        require("lspconfig")[lsp].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" },
+                    },
+                },
+            },
+        }
+    elseif lsp == "rust_analyzer"
+    then
+        require("lspconfig")[lsp].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+
+            cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+        }
+    elseif lsp == "gopls"
+    then
+        require("lspconfig")[lsp].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+
+            cmd = { "gopls", "serve" },
+            settings = {
+                gopls = {
+                    analyses = {
+                        unusedparams = true,
+                    },
+                    staticcheck = true,
+                },
+            },
+        }
+    end
 end
 
-require("luasnip.loaders.from_vscode").lazy_load({
-    include = nil, -- Load all languages
-    exclude = {},
-})
+
+
+-- Load all languages
