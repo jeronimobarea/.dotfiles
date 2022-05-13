@@ -35,9 +35,6 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'Raimondi/delimitMate' " Automatically closes quotes, parenthesis, etc.
 
-" Prettier
-Plug 'sbdchd/neoformat'
-
 " Theme
 Plug 'Yggdroot/indentLine' " Add's a line in every indentation
 Plug 'gruvbox-community/gruvbox'
