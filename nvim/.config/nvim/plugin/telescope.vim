@@ -1,6 +1,6 @@
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <space>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <space>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <space>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <space>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
-nnoremap <leader>fe :Telescope file_browser<cr>
+nnoremap <space>fe :Telescope file_browser<cr>
