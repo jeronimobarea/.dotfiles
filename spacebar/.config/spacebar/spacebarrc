@@ -11,7 +11,7 @@ spacebar -m config power                       on
 
 spacebar -m config padding_left                20
 spacebar -m config padding_right               20
-spacebar -m config spacing_left                25
+spacebar -m config spacing_left                5
 spacebar -m config spacing_right               15
 
 spacebar -m config text_font                   "Liga SFMono Nerd Font:Regular:12.0"
@@ -28,7 +28,7 @@ spacebar -m config clock_icon_color            0xffffab91
 
 spacebar -m config power_icon_strip             
 spacebar -m config space_icon                  •
-spacebar -m config space_icon_strip 1 2 3 4 5 6 7
+spacebar -m config space_icon_strip [1] [2] [3] [4] [5] [6] [7]
 spacebar -m config spaces_for_all_displays     on
 spacebar -m config clock_icon                  ℏ
 spacebar -m config clock_format                "%m/%d/%y %R"
