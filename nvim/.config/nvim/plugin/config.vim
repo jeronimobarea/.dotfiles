@@ -6,20 +6,22 @@ set guicursor=i:block
 set cc=80
 set showmatch
 set cursorline
-
 " Always set split tabs equally even when nvim is resized
 autocmd VimResized * wincmd =
 
 " Text search
 set ignorecase
 set smartcase
-set hlsearch
+set nohlsearch
 set incsearch
 set ruler
 
 " Common
 filetype plugin indent on
 set ttyfast
+set scrolloff=8
+set signcolumn=yes
+set updatetime=50
 " autocmd BufEnter * silent! :lcd%:p:h " Automatically change the current directory
 
 " Ignore files
@@ -30,7 +32,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set autoindent
+set smartindent
 
 " Themes
 " Disable background
