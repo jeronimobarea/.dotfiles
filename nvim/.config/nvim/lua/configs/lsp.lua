@@ -118,9 +118,10 @@ for _, lsp in pairs(servers) do
                 },
             },
         }
+    else
+        require("lspconfig")[lsp].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+        }
     end
 end
-
-
-
--- Load all languages
