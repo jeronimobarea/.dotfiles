@@ -306,7 +306,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach || tmux"
+    - tmux
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working
