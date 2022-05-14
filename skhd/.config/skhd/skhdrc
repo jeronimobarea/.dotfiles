@@ -47,3 +47,11 @@ ctrl + alt - l : yabai -m window --resize right:50:0; \
 # Restart Yabai
 ctrl + alt + shift - r : brew services restart yabai
 
+# Spaces
+cmd + alt - 1 : yabai -m space --focus 1
+cmd + alt - 2 : yabai -m space --focus 2
+cmd + alt - 3 : yabai -m space --focus 3
+cmd + alt - 4 : yabai -m space --focus 4
+cmd + alt - 5 : yabai -m space --focus 5
+cmd + alt - 6 : yabai -m space --focus 6
+cmd + alt - 7 : yabai -m space --focus 7
