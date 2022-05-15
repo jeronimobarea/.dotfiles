@@ -8,6 +8,7 @@ spacebar -m config title                       on
 spacebar -m config spaces                      on
 spacebar -m config clock                       off
 spacebar -m config power                       on
+spacebar -m config window_shadow               off
 
 spacebar -m config padding_left                8
 spacebar -m config padding_right               20
