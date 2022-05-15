@@ -4,7 +4,6 @@ This is a quick overview of my dotfiles for MacOS.
 
 ![empty desktop](screenshots/screenshot-empty-desktop.png)
 ![nvim](screenshots/screenshot-nvim-splits.png)
-![neofetch](screenshots/screenshot-neofetch-firefox.png)
 
 ## Setup
 
