@@ -19,4 +19,4 @@ brew "lazygit"
 brew "fd"
 brew "lsd"
 brew "neofetch"
-
+brew "ranger"
