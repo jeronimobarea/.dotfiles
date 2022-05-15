@@ -15,7 +15,7 @@ spacebar -m config padding_right               20
 spacebar -m config spacing_left                5
 spacebar -m config spacing_right               15
 
-spacebar -m config text_font                   "Liga SFMono Nerd Font:Regular:12.0"
+spacebar -m config text_font                   "Liga SFMono Nerd Font:Regular:14.0"
 spacebar -m config icon_font                   "Liga SFMono Nerd Font:Bold:14.0"
 
 spacebar -m config background_color            0xFA202020
