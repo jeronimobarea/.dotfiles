@@ -11,18 +11,18 @@ require("telescope").setup {
         grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
         qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
         file_ignore_patterns = {
-            "/.git/*",
+            ".git/",
             "go.sum",
         },
         vimgrep_arguments = {
-             "rg",
-             "--hidden",
-             "--color=never",
-             "--no-heading",
-             "--with-filename",
-             "--line-number",
-             "--column",
-             "--smart-case",
+            "rg",
+            "--hidden",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
         },
     },
     extensions = {
@@ -39,4 +39,3 @@ require("telescope").setup {
 
 require("telescope").load_extension("fzy_native")
 require("telescope").load_extension("file_browser")
-
