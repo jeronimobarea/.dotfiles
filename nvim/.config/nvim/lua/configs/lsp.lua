@@ -75,7 +75,7 @@ local on_attach = function(client, bufnr)
     Nnoremap('<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
     Nnoremap('<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>')
     Nnoremap('gr', '<cmd>lua vim.lsp.buf.references()<CR>')
-    Nnoremap('<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
+    -- Nnoremap('<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 end
 
 local servers = { 'pyright', 'rust_analyzer', 'gopls', 'sumneko_lua' }
