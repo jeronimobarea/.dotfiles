@@ -10,21 +10,3 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 " let g:go_diagnostics_enabled = 0
 " let g:go_echo_go_info = 0
 " let g:go_metalinter_enabled = 0
-
-" coc
-" nmap <silent> gd <Plug>(coc-definition)
-" nmap <silent> gy <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> gr <Plug>(coc-references)
-" nmap <silent> cn <Plug>(coc-rename)
-
-" let g:coc_global_extensions = [
-"     \ 'coc-snippets',
-"     \ 'coc-json',
-"     \ 'coc-yaml',
-"     \ 'coc-docker',
-"     \ 'coc-sh',
-"     \ 'coc-sql',
-"     \ 'coc-go',
-"     \ 'coc-pyright',
-" \]
