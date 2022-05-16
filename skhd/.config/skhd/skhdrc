@@ -2,6 +2,7 @@
 cmd + alt - t : open -n -a Alacritty
 # open browser
 cmd + alt - f : open -n -a Firefox
+cmd + alt - g : open -n -a "Google Chrome"
 # balance size of windows
 cmd + alt - b : yabai -m space --balance
 
@@ -61,3 +62,10 @@ cmd + alt - 4 : yabai -m space --focus 4
 cmd + alt - 5 : yabai -m space --focus 5
 cmd + alt - 6 : yabai -m space --focus 6
 cmd + alt - 7 : yabai -m space --focus 7
+
+# Monitor
+cmd + alt + shift - 1 : yabai -m window --display 1; yabai -m display --focus 1
+cmd + alt + shift - 2 : yabai -m window --display 2; yabai -m display --focus 2
+
+cmd + alt - p : yabai -m display --focus 1
+cmd + alt - n : yabai -m display --focus 2
