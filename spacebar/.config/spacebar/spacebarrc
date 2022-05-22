@@ -27,8 +27,8 @@ spacebar -m config right_shell_command         "$HOME/.dotfiles/scripts/network.
 
 spacebar -m config background_color            0xFA202020
 spacebar -m config foreground_color            0xffa8a8a8
-spacebar -m config power_icon_color            0xff909d63
-spacebar -m config battery_icon_color          0xffd75f5f
+spacebar -m config power_icon_color            0xffa8a8a8
+spacebar -m config battery_icon_color          0xffa8a8a8
 
 spacebar -m config space_icon_color            0xfffa511e
 spacebar -m config space_icon_color_secondary  0xff78c4d4
