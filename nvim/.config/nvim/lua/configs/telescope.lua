@@ -12,6 +12,7 @@ require("telescope").setup {
         qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
         file_ignore_patterns = {
             ".git/",
+            "target/",
             "go.sum",
         },
         vimgrep_arguments = {
