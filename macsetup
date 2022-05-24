@@ -21,3 +21,4 @@ brew services start yabai
 brew services start skhd
 brew services start spacebar
 
+. ./bin/helper && create_spaces
