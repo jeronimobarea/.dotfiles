@@ -115,6 +115,7 @@ for _, lsp in pairs(servers) do
                         unusedparams = true,
                     },
                     staticcheck = true,
+                    buildFlags = { "-tags=integration" },
                 },
             },
         }
