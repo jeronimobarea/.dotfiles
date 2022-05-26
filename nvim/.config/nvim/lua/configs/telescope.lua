@@ -25,6 +25,11 @@ require("telescope").setup {
             "--column",
             "--smart-case",
         },
+        mappings = {
+            i = {
+                ['<c-d>'] = require('telescope.actions').delete_buffer
+            },
+        },
     },
     extensions = {
         fzy_native = {
