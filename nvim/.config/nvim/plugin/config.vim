@@ -7,7 +7,6 @@ set cc=80
 set showmatch
 set cursorline
 " Always set split tabs equally even when nvim is resized
-autocmd VimResized * wincmd =
 set nowrap
 
 " Text search
@@ -52,5 +51,13 @@ noremap <space>t <cmd>belowright 20split term://zsh<cr>
 noremap <space>q <cmd>:q<cr>
 tnoremap <Esc> <C-\><C-n>
 
-" Prettier
-autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+" Groups
+augroup LSP_FORMATTER
+    autocmd!
+    autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+augroup END
+
+augroup VISUAL
+    autocmd!
+    autocmd VimResized * wincmd =
+augroup END
