@@ -78,51 +78,47 @@ local on_attach = function(client, bufnr)
     -- Nnoremap('<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 end
 
-local servers = { 'pyright', 'rust_analyzer', 'gopls', 'sumneko_lua' }
+
+local servers = { 'pyright', }
 for _, lsp in pairs(servers) do
-    if lsp == "sumneko_lua"
-    then
-        require("lspconfig")[lsp].setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-
-            settings = {
-                Lua = {
-                    diagnostics = {
-                        globals = { "vim" },
-                    },
-                },
-            },
-        }
-    elseif lsp == "rust_analyzer"
-    then
-        require("lspconfig")[lsp].setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-
-            cmd = { "rustup", "run", "nightly", "rust-analyzer" },
-        }
-    elseif lsp == "gopls"
-    then
-        require("lspconfig")[lsp].setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-
-            cmd = { "gopls", "serve" },
-            settings = {
-                gopls = {
-                    analyses = {
-                        unusedparams = true,
-                    },
-                    staticcheck = true,
-                    buildFlags = { "-tags=integration" },
-                },
-            },
-        }
-    else
-        require("lspconfig")[lsp].setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-        }
-    end
+    require("lspconfig")[lsp].setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+    }
 end
+
+require("lspconfig")["sumneko_lua"].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim" },
+            },
+        },
+    },
+}
+
+require("lspconfig")["rust_analyzer"].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+
+    cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+}
+
+require("lspconfig")["gopls"].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+
+    cmd = { "gopls", "serve" },
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+            },
+            staticcheck = true,
+            buildFlags = { "-tags=integration" },
+        },
+    },
+}

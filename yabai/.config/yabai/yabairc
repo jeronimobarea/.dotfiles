@@ -3,7 +3,7 @@
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
-./$HOME/.dotfiles/bin/helper
+./$HOME/.dotfiles/bin/helper && create_spaces
 
 # global settings
 yabai -m config mouse_follows_focus          off
