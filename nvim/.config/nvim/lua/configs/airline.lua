@@ -47,8 +47,8 @@ require("lualine").setup {
                 }
             }
         },
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = { 'encoding' },
+        lualine_x = { 'encoding' },
+        --lualine_y = {},
+        --lualine_z = { 'location', 'encoding' },
     },
 }
