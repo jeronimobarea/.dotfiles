@@ -5,6 +5,13 @@ This is a quick overview of my dotfiles for MacOS.
 ![empty desktop](screenshots/screenshot-empty-desktop.png)
 ![nvim](screenshots/screenshot-nvim-splits.png)
 
+# Keyboard layout
+
+![layout 0](screenshots/layout_0.PNG)
+![layout 1](screenshots/layout_1.PNG)
+![layout 2](screenshots/layout_2.PNG)
+![layout 3](screenshots/layout_3.PNG)
+
 ## Setup
 
 1. Install this font [Liga SFMono Nerd Font](https://github.com/epk/SF-Mono-Nerd-Font)
