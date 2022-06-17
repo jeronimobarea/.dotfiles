@@ -7,10 +7,11 @@ This is a quick overview of my dotfiles for MacOS.
 
 # Keyboard layout
 
-![layout 0](screenshots/layout_0.PNG)
-![layout 1](screenshots/layout_1.PNG)
-![layout 2](screenshots/layout_2.PNG)
-![layout 3](screenshots/layout_3.PNG)
+![layer 0](screenshots/layer_0.PNG)
+![layer 1](screenshots/layer_1.PNG)
+![layer 2](screenshots/layer_2.PNG)
+![layer 3](screenshots/layer_3.PNG)
+![layer 4](screenshots/layer_4.PNG)
 
 ## Setup
 
