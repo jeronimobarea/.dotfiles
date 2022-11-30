@@ -5,7 +5,7 @@ spacebar -m config display                     main
 spacebar -m config height                      26
 
 spacebar -m config spaces_for_all_displays     on
-spacebar -m config title                       on
+spacebar -m config title                       off
 spacebar -m config spaces                      on
 spacebar -m config clock                       on
 spacebar -m config power                       on
