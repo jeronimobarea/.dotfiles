@@ -8,6 +8,8 @@ alias la="ls -a"
 alias lla="ls -la"
 alias lt="ls --tree"
 
+alias python="python3"
+
 # If you come from bash robbyrussell you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -113,3 +115,4 @@ source $ZSH/oh-my-zsh.sh
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias thunes_rds_sso=~/bin/aws-rds-sso.sh
