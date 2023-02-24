@@ -54,7 +54,7 @@ tnoremap <Esc> <C-\><C-n>
 " Groups
 augroup LSP_FORMATTER
     autocmd!
-    autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+    autocmd BufWritePre * lua vim.lsp.buf.format()
 augroup END
 
 augroup VISUAL
