@@ -14,6 +14,7 @@ require("telescope").setup {
             ".git/",
             "target/",
             "go.sum",
+            "node_modules/",
         },
         vimgrep_arguments = {
             "rg",

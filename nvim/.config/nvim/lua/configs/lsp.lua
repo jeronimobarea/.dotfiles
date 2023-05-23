@@ -80,7 +80,7 @@ local on_attach = function(client, bufnr)
 end
 
 
-local servers = { 'pyright', }
+local servers = { 'pyright', 'solidity', 'tsserver', 'ocamllsp' }
 for _, lsp in pairs(servers) do
     require("lspconfig")[lsp].setup {
         on_attach = on_attach,

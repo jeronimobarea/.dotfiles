@@ -10,6 +10,8 @@ alias lt="ls --tree"
 
 alias python="python3"
 
+export YABAI_CERT="yabai-cert"
+
 # If you come from bash robbyrussell you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -116,3 +118,6 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias thunes_rds_sso=~/bin/aws-rds-sso.sh
+
+# opam configuration
+[[ ! -r /Users/jeronimobarea/.opam/opam-init/init.zsh ]] || source /Users/jeronimobarea/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
