@@ -9,13 +9,18 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 
 " Lsp
+Plug 'neovim/nvim-lspconfig'
+
 Plug 'williamboman/mason.nvim', {'do': ':MasonUpdate'}
 Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'neovim/nvim-lspconfig'
+
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'L3MON4D3/LuaSnip'
 Plug 'onsails/lspkind-nvim'
+
+Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v2.x'}
 
 " Languages stuff
 Plug 'fatih/vim-go'
