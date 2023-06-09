@@ -15,13 +15,12 @@ require("lualine").setup {
                     modified = 'DiffChange',
                     removed  = 'DiffDelete',
                 },
-                symbols = { added = '+', modified = '~', removed = '-' },
-                source = nil,
             },
             {
                 'diagnostics',
                 sources = { 'nvim_diagnostic', 'nvim_lsp' },
                 sections = { 'error', 'warn', 'info', 'hint' },
+                colored = true,
                 diagnostics_color = {
                     error = 'DiagnosticError',
                     warn  = 'DiagnosticWarn',
@@ -29,7 +28,6 @@ require("lualine").setup {
                     hint  = 'DiagnosticHint',
                 },
                 symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
-                colored = true,
                 update_in_insert = false,
                 always_visible = false,
             }
@@ -48,7 +46,5 @@ require("lualine").setup {
             }
         },
         lualine_x = { 'encoding' },
-        --lualine_y = {},
-        --lualine_z = { 'location', 'encoding' },
     },
 }
