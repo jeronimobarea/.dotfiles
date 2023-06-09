@@ -1,10 +1,14 @@
 set completeopt=menu,menuone,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
-set rtp^="/Users/jeronimobarea/.opam/default/share/ocp-indent/vim"
-let g:opamshare = substitute(system('opam var share'),'\n$','','''')
-
+if executable('opam')
+  let g:opamshare=substitute(system('opam var share'),'\n$','','''')
+  if isdirectory(g:opamshare."/merlin/vim")
+    execute "set rtp+=" . g:opamshare."/merlin/vim"
+  endif
+endif
 " vim-go stuff
+
 " let g:go_gopls_enabled = 0
 " let g:go_code_completion_enabled = 0
 " let g:go_auto_sameids = 0

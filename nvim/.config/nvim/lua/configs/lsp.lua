@@ -23,6 +23,13 @@ lsp.configure('lua_ls', {
     }
 })
 
+lsp.configure('ocamllsp', {
+    cmd = { "ocamllsp" },
+    filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
+    root_dir = require('lspconfig.util').root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project",
+        "dune-workspace"),
+})
+
 lsp.configure('gopls', {
     cmd = { "gopls", "serve" },
     settings = {
@@ -50,7 +57,6 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.set_preferences({
-    suggest_lsp_servers = false,
     sign_icons = {
         error = 'E',
         warn = 'W',
