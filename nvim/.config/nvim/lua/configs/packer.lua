@@ -43,7 +43,7 @@ return packer.startup(function(use)
         'ellisonleao/gruvbox.nvim',
         as = 'gruvbox',
         config = function()
-            vim.cmd('colorscheme gruvbox')
+            vim.cmd.colorscheme('gruvbox')
         end
     })
 

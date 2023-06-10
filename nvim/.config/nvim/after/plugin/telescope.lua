@@ -11,16 +11,16 @@ require("telescope").setup {
             "go.sum",
             "node_modules/",
         },
-    },
-    vimgrep_arguments = {
-        "rg",
-        "--hidden",
-        "--color=never",
-        "--no-heading",
-        "--with-filename",
-        "--line-number",
-        "--column",
-        "--smart-case",
+        vimgrep_arguments = {
+            "rg",
+            "--hidden",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+        },
     },
     extensions = {
         file_browser = {
