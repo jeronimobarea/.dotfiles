@@ -12,6 +12,16 @@ require("telescope").setup {
             "node_modules/",
         },
     },
+    vimgrep_arguments = {
+        "rg",
+        "--hidden",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+    },
     extensions = {
         file_browser = {
             hidden = true,
@@ -19,8 +29,6 @@ require("telescope").setup {
         }
     }
 }
-
-require("telescope").load_extension("file_browser")
 
 local builtin = require('telescope.builtin')
 local bind = vim.keymap.set
@@ -31,4 +39,9 @@ bind('n', '<space>fk', builtin.buffers, {})
 bind('n', '<space>fh', builtin.help_tags, {})
 bind('n', '<space>f', builtin.lsp_references, {})
 
-bind('n', '<space>fl', require("telescope").extensions.file_browser.file_browser, {})
+vim.api.nvim_set_keymap(
+    "n",
+    "<space>fl",
+    "<cmd>:Telescope file_browser path=%:p:h select_buffer=true<CR>",
+    { noremap = true }
+)

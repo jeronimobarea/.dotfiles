@@ -1,5 +1,3 @@
-require("configs.treesitter")
-require("configs.airline")
-require("configs.telescope")
-require("configs.lsp")
-require("configs.lazygit")
+require("configs.set")
+require("configs.remap")
+require("configs.packer")

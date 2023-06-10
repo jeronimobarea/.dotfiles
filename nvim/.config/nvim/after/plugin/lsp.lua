@@ -1,5 +1,7 @@
 local lsp = require("lsp-zero")
 
+require("nvim-autopairs").setup {}
+
 lsp.preset({
     name = 'recommended',
 })
@@ -54,7 +56,9 @@ cmp.setup({
 
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
-    local opts = { buffer = bufnr, remap = false }
+    lsp.buffer_autoformat()
+
+    local opts = { buffer = bufnr }
     local bind = vim.keymap.set
 
     bind("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -71,7 +75,6 @@ lsp.set_preferences({
         info = 'I'
     }
 })
-
 
 lsp.setup()
 
