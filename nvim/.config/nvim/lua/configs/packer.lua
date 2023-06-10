@@ -43,7 +43,6 @@ return packer.startup(function(use)
         'ellisonleao/gruvbox.nvim',
         as = 'gruvbox',
         config = function()
-            vim.o.background = "dark"
             vim.cmd('colorscheme gruvbox')
         end
     })
@@ -92,7 +91,10 @@ return packer.startup(function(use)
     use('nvim-tree/nvim-web-devicons')
     use("tpope/vim-fugitive")
 
-    use("alexghergh/nvim-tmux-navigation")
+    use({
+        "aserowy/tmux.nvim",
+        config = function() return require("tmux").setup() end
+    })
 
     use {
         "windwp/nvim-autopairs",
