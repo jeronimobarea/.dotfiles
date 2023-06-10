@@ -42,6 +42,6 @@ bind('n', '<space>f', builtin.lsp_references, {})
 vim.api.nvim_set_keymap(
     "n",
     "<space>fl",
-    "<cmd>:Telescope file_browser path=%:p:h select_buffer=true<CR>",
+    "<cmd>:Telescope file_browser path=%:p:h<CR>",
     { noremap = true }
 )

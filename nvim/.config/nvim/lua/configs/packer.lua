@@ -62,7 +62,10 @@ return packer.startup(function(use)
         end,
     }
 
+    -- GIT
     -- nvim v0.7.2
+    use("tpope/vim-fugitive")
+    use("f-person/git-blame.nvim")
     use({
         "kdheepak/lazygit.nvim",
         requires = {
@@ -82,6 +85,8 @@ return packer.startup(function(use)
             ts_update()
         end
     }
+    use("nvim-treesitter/nvim-treesitter-context")
+
 
     use {
         'nvim-lualine/lualine.nvim',
@@ -89,7 +94,6 @@ return packer.startup(function(use)
     }
 
     use('nvim-tree/nvim-web-devicons')
-    use("tpope/vim-fugitive")
 
     use({
         "aserowy/tmux.nvim",
