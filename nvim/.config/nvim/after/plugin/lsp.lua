@@ -13,7 +13,6 @@ lsp.ensure_installed({
     'solidity',
     'tsserver',
     'rust_analyzer',
-    'ocamllsp',
 })
 
 -- Fix Undefined global 'vim'
@@ -50,7 +49,7 @@ local cmp = require('cmp')
 
 cmp.setup({
     mapping = {
-        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }
 })
 
