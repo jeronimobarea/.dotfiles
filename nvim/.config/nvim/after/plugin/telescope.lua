@@ -5,14 +5,9 @@ require("telescope").setup {
         },
     },
     defaults = {
-        file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-        grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-        qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-
-        selection_strategy = "reset",
-        sorting_strategy = "descending",
-        scroll_strategy = "cycle",
         color_devicons = true,
+
+        prompt_prefix = "|> ",
 
         file_ignore_patterns = {
             ".git/",
@@ -39,6 +34,7 @@ require("telescope").setup {
         },
         file_browser = {
             hidden = true,
+            grouped = true,
         }
     }
 }
@@ -51,8 +47,8 @@ bind('n', '<space>fj', function()
     builtin.grep_string({ search = vim.fn.input("[GREP] |> ") })
 end)
 bind('n', '<space>fk', builtin.buffers, {})
-bind('n', '<space>fh', builtin.help_tags, {})
-bind('n', '<space>f', builtin.lsp_references, {})
+bind('n', '<space>fh', builtin.diagnostics, {})
+bind('n', '<space>f;', builtin.lsp_references, {})
 bind(
     "n",
     "<space>fl",
