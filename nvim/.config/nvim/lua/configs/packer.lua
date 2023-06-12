@@ -64,8 +64,7 @@ return packer.startup(function(use)
 
     -- GIT
     -- nvim v0.7.2
-    use("tpope/vim-fugitive")
-    use("f-person/git-blame.nvim")
+    use { 'lewis6991/gitsigns.nvim' }
     use({
         "kdheepak/lazygit.nvim",
         requires = {
