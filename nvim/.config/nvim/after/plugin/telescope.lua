@@ -39,6 +39,8 @@ require("telescope").setup({
     }
 })
 
+require("telescope").load_extension("file_browser")
+
 local builtin = require("telescope.builtin")
 local bind = vim.keymap.set
 
