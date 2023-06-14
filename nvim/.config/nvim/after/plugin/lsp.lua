@@ -1,56 +1,30 @@
 local lsp = require("lsp-zero")
 
-require("nvim-autopairs").setup {}
-
 lsp.preset({
-    name = 'recommended',
+    name = "recommended",
 })
 
 lsp.ensure_installed({
-    'gopls',
-    'lua_ls',
-    'pyright',
-    'solidity',
-    'tsserver',
-    'rust_analyzer',
+    "gopls",
+    "lua_ls",
+    "pyright",
+    "solidity",
+    "tsserver",
+    "rust_analyzer",
 })
 
--- Fix Undefined global 'vim'
-lsp.configure('lua_ls', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
-
-lsp.configure('ocamllsp', {
-    cmd = { "ocamllsp" },
-    filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
-    root_dir = require('lspconfig.util').root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project",
-        "dune-workspace"),
-})
-
-lsp.configure('gopls', {
-    settings = {
-        gopls = {
-            analyses = {
-                unusedparams = true,
-            },
-            staticcheck = true,
-            buildFlags = { "-tags=integration" },
-        },
-    },
-})
-
-local cmp = require('cmp')
-
+local cmp = require("cmp")
 cmp.setup({
     mapping = {
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }
+})
+
+lsp.set_sign_icons({
+    error = "E",
+    warn = "W",
+    hint = "H",
+    info = "I"
 })
 
 lsp.on_attach(function(_, bufnr)
@@ -66,13 +40,25 @@ lsp.on_attach(function(_, bufnr)
     bind("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
 end)
 
-lsp.set_preferences({
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
-    }
+require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+
+lsp.configure("ocamllsp", {
+    cmd = { "ocamllsp" },
+    filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
+    root_dir = require("lspconfig.util").root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project",
+        "dune-workspace"),
+})
+
+lsp.configure("gopls", {
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+            },
+            staticcheck = true,
+            buildFlags = { "-tags=integration" },
+        },
+    },
 })
 
 lsp.setup()

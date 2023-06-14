@@ -1,4 +1,4 @@
-require("telescope").setup {
+require("telescope").setup({
     pickers = {
         find_files = {
             hidden = true,
@@ -37,21 +37,16 @@ require("telescope").setup {
             grouped = true,
         }
     }
-}
+})
 
-local builtin = require('telescope.builtin')
+local builtin = require("telescope.builtin")
 local bind = vim.keymap.set
 
-bind('n', '<space>ff', builtin.find_files, {})
-bind('n', '<space>fj', function()
+bind("n", "<space>ff", builtin.find_files)
+bind("n", "<space>fj", function()
     builtin.grep_string({ search = vim.fn.input("[GREP] |> ") })
 end)
-bind('n', '<space>fk', builtin.buffers, {})
-bind('n', '<space>fh', builtin.diagnostics, {})
-bind('n', '<space>f;', builtin.lsp_references, {})
-bind(
-    "n",
-    "<space>fl",
-    "<cmd>:Telescope file_browser path=%:p:h<CR>",
-    { noremap = true }
-)
+bind("n", "<space>fk", builtin.buffers)
+bind("n", "<space>fh", builtin.diagnostics)
+bind("n", "<space>f;", builtin.lsp_references)
+bind("n", "<space>fl", "<cmd>:Telescope file_browser path=%:p:h<CR>", { noremap = true })
