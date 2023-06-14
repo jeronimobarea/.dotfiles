@@ -11,22 +11,19 @@ opt.shiftwidth = 4
 opt.expandtab = true
 
 opt.smartindent = true
-
 opt.wrap = false
 
 opt.swapfile = false
 opt.backup = false
 opt.undofile = true
 
+opt.ignorecase = true -- Ignore case when searching...
 opt.hlsearch = false
 opt.incsearch = true
 
-opt.termguicolors = true
-
 opt.scrolloff = 8
-opt.signcolumn = "yes"
-opt.isfname:append("@-@")
 
 opt.updatetime = 50
 
+opt.signcolumn = "yes"
 opt.colorcolumn = "80"
