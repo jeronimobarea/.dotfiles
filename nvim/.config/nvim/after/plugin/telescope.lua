@@ -6,8 +6,7 @@ require("telescope").setup({
     },
     defaults = {
         color_devicons = true,
-
-        prompt_prefix = "|> ",
+        prompt_prefix = " => ",
 
         file_ignore_patterns = {
             ".git/",
@@ -42,13 +41,13 @@ require("telescope").setup({
 require("telescope").load_extension("file_browser")
 
 local builtin = require("telescope.builtin")
-local bind = vim.keymap.set
+local nmap = require("jero.keymap").nmap
 
-bind("n", "<space>ff", builtin.find_files)
-bind("n", "<space>fj", function()
+nmap("<space>ff", builtin.find_files)
+nmap("<space>fj", function()
     builtin.grep_string({ search = vim.fn.input("[GREP] |> ") })
 end)
-bind("n", "<space>fk", builtin.buffers)
-bind("n", "<space>fh", builtin.diagnostics)
-bind("n", "<space>f;", builtin.lsp_references)
-bind("n", "<space>fl", "<cmd>:Telescope file_browser path=%:p:h<CR>", { noremap = true })
+nmap("<space>fk", builtin.buffers)
+nmap("<space>fh", builtin.diagnostics)
+nmap("<space>f;", builtin.lsp_references)
+nmap("<space>fl", "<cmd>:Telescope file_browser path=%:p:h<CR>", { noremap = true })

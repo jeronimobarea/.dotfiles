@@ -32,12 +32,12 @@ lsp.on_attach(function(_, bufnr)
     lsp.buffer_autoformat()
 
     local opts = { buffer = bufnr }
-    local bind = vim.keymap.set
+    local nmap = require("jero.keymap").nmap
 
-    bind("n", "K", function() vim.lsp.buf.hover() end, opts)
-    bind("n", "<leader>e", function() vim.diagnostic.open_float() end, opts)
-    bind("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
-    bind("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+    nmap("K", function() vim.lsp.buf.hover() end, opts)
+    nmap("<leader>e", function() vim.diagnostic.open_float() end, opts)
+    nmap("<leader>ca", function() vim.lsp.buf.code_action() end, opts)
+    nmap("<leader>rn", function() vim.lsp.buf.rename() end, opts)
 end)
 
 require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
