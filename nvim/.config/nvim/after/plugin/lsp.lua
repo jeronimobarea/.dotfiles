@@ -4,13 +4,15 @@ lsp.preset({
     name = "recommended",
 })
 
-lsp.ensure_installed({
-    "gopls",
-    "lua_ls",
-    "pyright",
-    "solidity",
-    "tsserver",
-    "rust_analyzer",
+require("mason-lspconfig").setup({
+    ensure_installed = {
+        "gopls",
+        "lua_ls",
+        "pyright",
+        "solidity",
+        "tsserver",
+        "rust_analyzer",
+    }
 })
 
 lsp.set_sign_icons({
@@ -33,16 +35,18 @@ lsp.on_attach(function(_, bufnr)
     nmap("<leader>rn", function() vim.lsp.buf.rename() end, opts)
 end)
 
-require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+local lspconfig = require("lspconfig")
 
-lsp.configure("ocamllsp", {
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+
+lspconfig.ocamllsp.setup({
     cmd = { "ocamllsp" },
     filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
     root_dir = require("lspconfig.util").root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project",
         "dune-workspace"),
 })
 
-lsp.configure("gopls", {
+lspconfig.gopls.setup({
     settings = {
         gopls = {
             analyses = {
