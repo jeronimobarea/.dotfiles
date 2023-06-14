@@ -1,4 +1,6 @@
-vim.keymap.set("n", "<space>d;", "<cmd>:LazyGit<CR>")
+local nmap = require("jero.keymap").nmap
+
+nmap("<space>d;", "<cmd>:LazyGit<CR>")
 
 vim.api.nvim_create_autocmd("BufEnter", {
     callback = function()

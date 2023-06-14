@@ -13,13 +13,6 @@ lsp.ensure_installed({
     "rust_analyzer",
 })
 
-local cmp = require("cmp")
-cmp.setup({
-    mapping = {
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    }
-})
-
 lsp.set_sign_icons({
     error = "E",
     warn = "W",
@@ -62,6 +55,25 @@ lsp.configure("gopls", {
 })
 
 lsp.setup()
+
+local cmp = require("cmp")
+local cmp_action = require("lsp-zero").cmp_action()
+
+require("luasnip.loaders.from_vscode").lazy_load()
+
+cmp.setup({
+    sources = {
+        { name = "path" },
+        { name = "nvim_lsp" },
+        { name = "buffer",  keyword_length = 3 },
+        { name = "luasnip", keyword_length = 2 },
+    },
+    mapping = {
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<C-f>"] = cmp_action.luasnip_jump_forward(),
+        ["<C-b>"] = cmp_action.luasnip_jump_backward(),
+    }
+})
 
 vim.diagnostic.config({
     virtual_text = true

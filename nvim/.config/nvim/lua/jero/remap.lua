@@ -1,12 +1,12 @@
-local bind = vim.keymap.set
+local nmap = require("jero.keymap").nmap
 
 vim.g.mapleader = " "
 
-bind("n", "<space>t", "<cmd>belowright 20split term://zsh<cr>")
-bind("n", "<space>q", "<cmd>:q<cr>")
-bind("n", "<Esc>", "<C-\\><C-n>")
+nmap("<space>t", "<cmd>belowright 20split term://zsh<cr>")
+nmap("<space>q", "<cmd>:q<cr>")
+nmap("<Esc>", "<C-\\><C-n>")
 
-bind("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/configs/packer.lua<CR>")
-bind("n", "<leader><leader>", function()
+nmap("<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/configs/packer.lua<CR>")
+nmap("<leader><leader>", function()
     vim.cmd("so")
 end)
