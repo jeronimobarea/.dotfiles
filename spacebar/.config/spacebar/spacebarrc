@@ -23,7 +23,7 @@ spacebar -m config icon_font                   "Liga SFMono Nerd Font:Bold:14.0"
 
 spacebar -m config right_shell                 on
 spacebar -m config right_shell_icon            
-spacebar -m config right_shell_command         "$HOME/.dotfiles/scripts/network.sh"
+spacebar -m config right_shell_command         "$HOME/.dotfiles/spacebar/.config/spacebar/network.sh"
 
 spacebar -m config background_color            0xFA202020
 spacebar -m config foreground_color            0xffa8a8a8
