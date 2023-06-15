@@ -52,7 +52,7 @@ yabai -m rule --add app="Slack" space=4
 yabai -m rule --add app="Telegram" space=7
 
 SKETCHYBAR_HEIGHT=$(sketchybar -m config height)
-yabai -m config external_bar all:0:32
+yabai -m config external_bar all:0:36
 
 # Refocus when window is closed
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
