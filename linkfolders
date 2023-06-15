@@ -1,7 +1,7 @@
 #! /bin/sh
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="yabai,nvim,alacritty,spacebar,skhd,tmux,zsh,neofetch,ranger"
-fi
+    STOW_FOLDERS="yabai,nvim,alacritty,sketchybar,skhd,tmux,zsh"
+i
 
 if [[ -z $DOTFILES ]]; then
     DOTFILES=~/.dotfiles
