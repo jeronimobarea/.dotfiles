@@ -13,6 +13,7 @@ require("telescope").setup({
             "target/",
             "go.sum",
             "node_modules/",
+            "_build/",
         },
 
         vimgrep_arguments = {
