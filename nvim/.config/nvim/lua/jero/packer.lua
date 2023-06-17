@@ -79,14 +79,7 @@ return packer.startup(function(use)
     })
     use("nvim-treesitter/nvim-treesitter-context")
 
-    use({
-        "ray-x/go.nvim",
-        config = function()
-            require("go").setup()
-        end
-    })
     use("ray-x/guihua.lua") -- recommended if need floating window support
-    use("neovim/nvim-lspconfig")
     use({
         "nvim-lualine/lualine.nvim",
         requires = { "nvim-tree/nvim-web-devicons", opt = true }
@@ -131,6 +124,14 @@ return packer.startup(function(use)
             -- Snippets
             { "L3MON4D3/LuaSnip" },
         }
+    })
+
+    -- LANGUAGE SPECIFIC
+    use({
+        "ray-x/go.nvim",
+        config = function()
+            require("go").setup()
+        end
     })
 
     -- DEBUGGER

@@ -19,7 +19,7 @@ lsp.set_sign_icons({
     error = "E",
     warn = "W",
     hint = "H",
-    info = "I"
+    info = "I",
 })
 
 lsp.on_attach(function(_, bufnr)
@@ -27,24 +27,18 @@ lsp.on_attach(function(_, bufnr)
     lsp.buffer_autoformat()
 
     local opts = { buffer = bufnr }
+    local lspbuf = vim.lsp.buf
     local nmap = require("jero.keymap").nmap
 
-    nmap("K", function() vim.lsp.buf.hover() end, opts)
+    nmap("K", function() lspbuf.hover() end, opts)
     nmap("<leader>e", function() vim.diagnostic.open_float() end, opts)
-    nmap("<leader>ca", function() vim.lsp.buf.code_action() end, opts)
-    nmap("<leader>rn", function() vim.lsp.buf.rename() end, opts)
+    nmap("<leader>ca", function() lspbuf.code_action() end, opts)
+    nmap("<leader>rn", function() lspbuf.rename() end, opts)
 end)
 
 local lspconfig = require("lspconfig")
 
 lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
-
-lspconfig.ocamllsp.setup({
-    cmd = { "ocamllsp" },
-    filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
-    root_dir = require("lspconfig.util").root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project",
-        "dune-workspace"),
-})
 
 lspconfig.gopls.setup({
     settings = {
@@ -54,6 +48,7 @@ lspconfig.gopls.setup({
             },
             staticcheck = true,
             buildFlags = { "-tags=integration" },
+            semanticTokens = true,
         },
     },
 })
@@ -62,7 +57,6 @@ lsp.setup()
 
 local cmp = require("cmp")
 local cmp_action = require("lsp-zero").cmp_action()
-
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
@@ -80,5 +74,5 @@ cmp.setup({
 })
 
 vim.diagnostic.config({
-    virtual_text = true
+    virtual_text = true,
 })

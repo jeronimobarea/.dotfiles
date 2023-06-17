@@ -9,7 +9,7 @@ require("nvim-treesitter.configs").setup({
         "yaml",
         "solidity",
         "javascript",
-        "ocaml"
+        "ocaml",
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
