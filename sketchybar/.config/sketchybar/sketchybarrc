@@ -60,6 +60,7 @@ sketchybar --default "${defaults[@]}"
 # Left
 source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/yabai.sh"
+source "$ITEM_DIR/front_app.sh"
 
 # Right
 source "$ITEM_DIR/calendar.sh"
