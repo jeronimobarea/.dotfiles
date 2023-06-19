@@ -118,6 +118,12 @@ return packer.startup(function(use)
         }
     })
 
+    -- LANGUAGE SPECIFIC
+    use({
+        "ray-x/go.nvim",
+        run = ":lua require('go.install').update_all_sync()"
+    })
+
     use({
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup() end
