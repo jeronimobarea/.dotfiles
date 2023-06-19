@@ -7,7 +7,7 @@ window_state() {
   WINDOW=$(yabai -m query --windows --window)
   STACK_INDEX=$(echo "$WINDOW" | jq '.["stack-index"]')
 
-  COLOR=$BAR_BORDER_COLOR
+  COLOR=$GV_BAR_BORDER_COLOR
   ICON=""
 
   if [ "$(echo "$WINDOW" | jq '.["is-floating"]')" = "true" ]; then

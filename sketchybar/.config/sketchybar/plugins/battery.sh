@@ -11,7 +11,7 @@ if [ $PERCENTAGE = "" ]; then
   exit 0
 fi
 
-COLOR=$WHITE
+COLOR=$GV_WHITE
 case ${PERCENTAGE} in
   9[0-9]|100) ICON=$BATTERY_100;
   ;;

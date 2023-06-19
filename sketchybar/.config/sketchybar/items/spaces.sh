@@ -19,13 +19,13 @@ do
     padding_left=2
     padding_right=2
     label.padding_right=20
-    icon.highlight_color=$WHITE
-    label.color=$GREY
-    label.highlight_color=$WHITE
+    icon.highlight_color=$GV_WHITE
+    label.color=$GV_GREY
+    label.highlight_color=$GV_WHITE
     label.font="sketchybar-app-font:Regular:16.0"
     label.y_offset=-1
-    background.color=$BACKGROUND_1
-    background.border_color=$BACKGROUND_2
+    background.color=$GV_BACKGROUND_1
+    background.border_color=$GV_BACKGROUND_2
     background.drawing=off
     label.drawing=off
     script="$PLUGIN_DIR/space.sh"
@@ -37,8 +37,8 @@ do
 done
 
 spaces_bracket=(
-  background.color=$BACKGROUND_1
-  background.border_color=$BACKGROUND_2
+  background.color=$GV_BACKGROUND_1
+  background.border_color=$GV_BACKGROUND_2
 )
 
 separator=(
@@ -49,7 +49,7 @@ separator=(
   label.drawing=off
   associated_display=active
   click_script='yabai -m space --create && sketchybar --trigger space_change'
-  icon.color=$WHITE
+  icon.color=$GV_WHITE
 )
 
 sketchybar --add bracket spaces_bracket '/space\..*/'  \
