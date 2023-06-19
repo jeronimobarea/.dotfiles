@@ -39,10 +39,15 @@ return packer.startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
 
+    -- THEME
+    use("gruvbox-community/gruvbox")
+
     use({
-        "ellisonleao/gruvbox.nvim",
-        as = "gruvbox",
+        "nvim-lualine/lualine.nvim",
+        requires = { "nvim-tree/nvim-web-devicons", opt = true }
     })
+
+    use("nvim-tree/nvim-web-devicons")
 
     -- TELESCOPE
     use({
@@ -80,21 +85,10 @@ return packer.startup(function(use)
     use("nvim-treesitter/nvim-treesitter-context")
 
     use("ray-x/guihua.lua") -- recommended if need floating window support
-    use({
-        "nvim-lualine/lualine.nvim",
-        requires = { "nvim-tree/nvim-web-devicons", opt = true }
-    })
-
-    use("nvim-tree/nvim-web-devicons")
 
     use({
         "aserowy/tmux.nvim",
         config = function() return require("tmux").setup() end
-    })
-
-    use({
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup() end
     })
 
     -- LSP
@@ -107,9 +101,7 @@ return packer.startup(function(use)
             {
                 -- Optional
                 "williamboman/mason.nvim",
-                run = function()
-                    pcall(vim.cmd, "MasonUpdate")
-                end,
+                run = ":MasonUpdate"                 -- :MasonUpdate updates registry contents
             },
             { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
@@ -126,12 +118,9 @@ return packer.startup(function(use)
         }
     })
 
-    -- LANGUAGE SPECIFIC
     use({
-        "ray-x/go.nvim",
-        config = function()
-            require("go").setup()
-        end
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup() end
     })
 
     -- DEBUGGER
