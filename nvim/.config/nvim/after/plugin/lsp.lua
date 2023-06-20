@@ -2,6 +2,9 @@ local lsp = require("lsp-zero")
 
 lsp.preset({
     name = "recommended",
+    manage_nvim_cmp = {
+        set_sources = "recommended",
+    },
 })
 
 require("mason-lspconfig").setup({
@@ -60,6 +63,14 @@ local cmp_action = require("lsp-zero").cmp_action()
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
+    preselect = "item",
+    completion = {
+        completeopt = "menu,menuone,noinsert",
+    },
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
     sources = {
         { name = "path" },
         { name = "nvim_lsp" },
