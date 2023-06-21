@@ -134,9 +134,10 @@ return packer.startup(function(use)
     use({
         "rcarriga/nvim-dap-ui",
         requires = { "mfussenegger/nvim-dap" },
-        config = function()
-            require("dapui").setup()
-        end
+    })
+    use({
+        "nvim-telescope/telescope-dap.nvim",
+        requires = "nvim-telescope/telescope.nvim",
     })
 
     -- Automatically set up your configuration after cloning packer.nvim

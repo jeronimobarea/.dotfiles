@@ -40,6 +40,7 @@ require("telescope").setup({
 })
 
 require("telescope").load_extension("file_browser")
+require("telescope").load_extension("dap")
 
 local builtin = require("telescope.builtin")
 local nmap = require("jero.keymap").nmap
