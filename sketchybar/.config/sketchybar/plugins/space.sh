@@ -2,9 +2,9 @@
 
 update() {
   source "$CONFIG_DIR/colors.sh"
-  COLOR=$GV_BACKGROUND_2
+  COLOR=$YABAI_SPACE_BACKGROUND_BORDER_COLOR
   if [ "$SELECTED" = "true" ]; then
-    COLOR=$GV_AQUA
+    COLOR=$YABAI_SPACE_BACKGROUND_BORDER_COLOR_ACTIVE
   fi
   sketchybar --set $NAME icon.highlight=$SELECTED \
                          label.highlight=$SELECTED \
