@@ -1,4 +1,6 @@
-require("telescope").setup({
+local telescope = require("telescope")
+
+telescope.setup({
     pickers = {
         find_files = {
             hidden = true,
@@ -39,17 +41,17 @@ require("telescope").setup({
     }
 })
 
-require("telescope").load_extension("file_browser")
-require("telescope").load_extension("dap")
+telescope.load_extension("file_browser")
+telescope.load_extension("dap")
 
 local builtin = require("telescope.builtin")
 local nmap = require("jero.keymap").nmap
 
-nmap("<space>ff", builtin.find_files)
-nmap("<space>fj", function()
+nmap("<leader>ff", builtin.find_files)
+nmap("<leader>fj", function()
     builtin.grep_string({ search = vim.fn.input("[GREP] |> ") })
 end)
-nmap("<space>fk", builtin.buffers)
-nmap("<space>fh", builtin.diagnostics)
-nmap("<space>f;", builtin.lsp_references)
-nmap("<space>fl", "<cmd>:Telescope file_browser path=%:p:h<CR>", { noremap = true })
+nmap("<leader>fk", builtin.buffers)
+nmap("<leader>fh", builtin.diagnostics)
+nmap("<leader>f;", builtin.lsp_references)
+nmap("<leader>fl", "<cmd>:Telescope file_browser path=%:p:h<CR>", { noremap = true })
