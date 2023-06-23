@@ -3,12 +3,15 @@
 update() {
   source "$CONFIG_DIR/colors.sh"
   COLOR=$YABAI_SPACE_BACKGROUND_BORDER_COLOR
+  BG_COLOR=$YABAI_SPACE_BACKGROUND_COLOR
   if [ "$SELECTED" = "true" ]; then
     COLOR=$YABAI_SPACE_BACKGROUND_BORDER_COLOR_ACTIVE
+    BG_COLOR=$YABAI_SPACE_BACKGROUND_SELECTED_COLOR
   fi
   sketchybar --set $NAME icon.highlight=$SELECTED \
                          label.highlight=$SELECTED \
-                         background.border_color=$COLOR
+                         background.border_color=$COLOR \
+                         background.color=$BG_COLOR
 }
 
 mouse_clicked() {

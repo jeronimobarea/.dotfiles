@@ -17,15 +17,16 @@ case ${PERCENTAGE} in
   ;;
   [6-8][0-9]) ICON=$BATTERY_75;
   ;;
-  [3-5][0-9]) ICON=$BATTERY_50
+[3-5][0-9]) ICON=$BATTERY_50; COLOR=$BATTERY_MEDIUM
   ;;
-  [1-2][0-9]) ICON=$BATTERY_25; COLOR=$ORANGE
+  [1-2][0-9]) ICON=$BATTERY_25; COLOR=$BATTERY_LOW
   ;;
-  *) ICON=$BATTERY_0; COLOR=$RED
+  *) ICON=$BATTERY_0; COLOR=$BATTERY_SUPERLOW
 esac
 
 if [[ $CHARGING != "" ]]; then
   ICON=$BATTERY_CHARGING
+  COLOR=$CHARGER_CONNECTED
 fi
 
 sketchybar --set $NAME  icon="$ICON" icon.color=$COLOR label="$PERCENTAGE%"

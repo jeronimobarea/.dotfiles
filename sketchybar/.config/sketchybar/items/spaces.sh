@@ -19,6 +19,7 @@ do
     padding_left=2
     padding_right=2
     label.padding_right=20
+    icon.color=$YABAI_SPACE_ICON_COLOR
     icon.highlight_color=$ICON_HIGHLIGHT_COLOR
     label.color=$YABAI_SPACE_LABEL_COLOR
     label.highlight_color=$LABEL_HIGHLIGHT_COLOR
