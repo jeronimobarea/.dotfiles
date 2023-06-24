@@ -1,7 +1,7 @@
-grant_permissions:
+grantpermissions:
 	chmod +x ./macsetup
 	chmod +x ./linkfolders
 	chmod +x ./install
-mac_setup: grant_permissions ./macsetup ./linkfolders ./install
-tmux_update:
+macsetup: grantpermissions ./macsetup ./linkfolders ./install
+tmuxupdate:
 	tmux source-file ~/.tmux.conf

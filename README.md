@@ -7,18 +7,15 @@ This is a quick overview of my dotfiles for MacOS.
 
 # Keyboard layout
 
-![layer 0](screenshots/layer_0.PNG)
-![layer 1](screenshots/layer_1.PNG)
-![layer 2](screenshots/layer_2.PNG)
-![layer 3](screenshots/layer_3.PNG)
-![layer 4](screenshots/layer_4.PNG)
+![layer 0](screenshots/layer_0.png)
+![layer 1](screenshots/layer_1.png)
+![layer 2](screenshots/layer_2.png)
+![layer 3](screenshots/layer_3.png)
+![layer 4](screenshots/layer_4.png)
 
 ## Setup
 
-1. Install this font [Liga SFMono Nerd Font](https://github.com/epk/SF-Mono-Nerd-Font)
-2. Run the `./macsetup` this will install brew and all the `Brewfile` packages.
-3. Run the `./linkfolders` this will export which folder needs to be linked.
-4. Run the `./install` this will link all the configs.
+You can just run `make macsetup`
 
 In case you want to remove the configurations just run `./cleanenv` this will unlink the configs.
 
@@ -27,7 +24,7 @@ In case you want to remove the configurations just run `./cleanenv` this will un
 - Terminal emulator: [Alacritty](https://github.com/alacritty/alacritty)
 - Shell: [Zsh](https://ohmyz.sh/)
 - Window manager: [Yabai](https://github.com/koekeishiya/yabai)
-- Top bar: [Sketchybar](https://github.com/FelixKratz/SketchyBar)
+- Bottom bar: [Sketchybar](https://github.com/FelixKratz/SketchyBar)
 - Shortcuts: [Skhd](https://github.com/koekeishiya/skhd)
 - Text editor: [Neovim](https://neovim.io/)
 - Terminal multiplexer: [Tmux](https://github.com/tmux/tmux)
