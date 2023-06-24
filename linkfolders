@@ -1,6 +1,6 @@
 #! /bin/sh
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="yabai,nvim,alacritty,sketchybar,skhd,tmux,zsh"
+    STOW_FOLDERS="yabai,nvim,alacritty,sketchybar,skhd,tmux,zsh,ranger"
 i
 
 if [[ -z $DOTFILES ]]; then
