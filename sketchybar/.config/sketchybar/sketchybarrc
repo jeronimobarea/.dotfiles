@@ -17,8 +17,8 @@ bar=(
   shadow=off
   position=bottom
   sticky=on
-  padding_right=10
-  padding_left=10
+  padding_right=8
+  padding_left=8
 )
 
 sketchybar --bar "${bar[@]}"
@@ -49,7 +49,7 @@ source "$ITEM_DIR/front_app.sh"
 
 # Right
 source "$ITEM_DIR/calendar.sh"
-source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/control_center.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update

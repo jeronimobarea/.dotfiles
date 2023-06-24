@@ -13,11 +13,11 @@ fi
 
 COLOR=$GV_WHITE
 case ${PERCENTAGE} in
-  9[0-9]|100) ICON=$BATTERY_100;
+  9[0-9]|100) ICON=$BATTERY_100; COLOR=$CHARGER_CONNECTED
   ;;
   [6-8][0-9]) ICON=$BATTERY_75;
   ;;
-[3-5][0-9]) ICON=$BATTERY_50; COLOR=$BATTERY_MEDIUM
+  [3-5][0-9]) ICON=$BATTERY_50; COLOR=$BATTERY_MEDIUM
   ;;
   [1-2][0-9]) ICON=$BATTERY_25; COLOR=$BATTERY_LOW
   ;;
@@ -29,4 +29,4 @@ if [[ $CHARGING != "" ]]; then
   COLOR=$CHARGER_CONNECTED
 fi
 
-sketchybar --set $NAME  icon="$ICON" icon.color=$COLOR label="$PERCENTAGE%"
+sketchybar --set $NAME  icon="$ICON" icon.color=$COLOR label="$PERCENTAGE%" label.color=$COLOR

@@ -2,6 +2,8 @@
 
 export GV_BLACK_0H=0xff1d2021
 export GV_BLACK_0=0xff282828
+export GV_BLACK_BG1=0xff3c3836
+export GV_BLACK_BG2=0xff665c54
 export GV_WHITE=0xfffbf1c7
 export GV_GREY=0xffa89984
 export GV_AQUA=0xff689d6a
@@ -9,6 +11,8 @@ export GV_AQUA_2=0xff8ec07c
 export GV_YELLOW=0xffd79921
 export GV_ORANGE=0xffd65d0e
 export GV_RED=0xffcc241d
+export GV_PURPLE=0xffb16286
+export GV_BLUE=0xff458588
 
 export GV_BAR_COLOR=$GV_BLACK_0H
 export GV_BAR_BORDER_COLOR=$GV_AQUA
