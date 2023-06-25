@@ -26,9 +26,6 @@ rm -rf /tmp/SFMono_Nerd_Font/
 
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.4/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 
-
 yabai --start-service
 skhd --start-service
 brew services start sketchybar
-
-. ./bin/helper && create_spaces
