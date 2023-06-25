@@ -8,7 +8,16 @@ alias la="ls -a"
 alias lla="ls -la"
 alias lt="ls --tree"
 
-alias rn="ranger"
+function ranger_func {
+    ranger $*
+    local quit_cd_wd_file="$HOME/.ranger_quit_cd_wd"
+    if [ -s "$quit_cd_wd_file" ]; then
+        cd "$(cat $quit_cd_wd_file)"
+        true > "$quit_cd_wd_file"
+    fi
+}
+
+alias rn="ranger_func"
 
 alias python="python3"
 
