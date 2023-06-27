@@ -47,4 +47,18 @@ require("lualine").setup({
         },
         lualine_x = { "encoding" },
     },
+    tabline = {
+        lualine_a = {
+            {
+                "tabs",
+                -- Note:
+                -- It can also be a function that returns
+                -- the value of `max_length` dynamically.
+                mode = 2, -- 0: Shows tab_nr
+                -- 1: Shows tab_name
+                -- 2: Shows tab_nr + tab_name
+
+            },
+        },
+    },
 })
