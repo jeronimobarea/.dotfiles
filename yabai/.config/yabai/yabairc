@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+PADDING=0
+
 # Unload the macOS WindowManager process
 launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist > /dev/null 2>&1 &
 
@@ -37,10 +39,10 @@ yabai -m config \
     mouse_drop_action            swap        \
                                              \
     layout                       bsp         \
-    top_padding                  0           \
-    bottom_padding               0           \
-    left_padding                 0           \
-    right_padding                0           \
+    top_padding                  $PADDING    \
+    bottom_padding               $PADDING    \
+    left_padding                 $PADDING    \
+    right_padding                $PADDING    \
     window_gap                   1           \
 
 yabai -m space 1 --label 1
