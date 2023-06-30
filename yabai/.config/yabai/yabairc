@@ -6,10 +6,13 @@ PADDING=0
 launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist > /dev/null 2>&1 &
 
 sudo yabai --load-sa
+
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
 yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
+
+$HOME/.config/yabai/create_spaces.sh
 
 # global settings
 yabai -m config \
@@ -17,11 +20,12 @@ yabai -m config \
     mouse_follows_focus          off         \
     focus_follows_mouse          off         \
                                              \
+    window_opacity               on          \
     window_placement             first_child \
     window_topmost               off         \
     window_shadow                off         \
-    window_opacity               on          \
     window_opacity_duration      0.0         \
+                                             \
     active_window_opacity        0.97        \
     normal_window_opacity        0.97        \
     window_border                on          \
@@ -56,12 +60,13 @@ yabai -m space 7 --label 7
 yabai -m rule --add app="Alacritty" space=2
 yabai -m rule --add app="Firefox" space=3
 yabai -m rule --add app="Slack" space=4
-yabai -m rule --add app="Telegram" space=7
 
-yabai -m config 
 # Refocus when window is closed
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
+### Sketchybar ###
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"         # Notify sketchybar when space changes
+yabai -m signal --add event=window_title_changed action="sketchybar --trigger title_change"   # Notify sketchybar when the focused app changes
 
 echo "yabai configuration loaded.."

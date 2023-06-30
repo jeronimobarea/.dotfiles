@@ -1,7 +1,6 @@
 # open terminal
 cmd + alt - t : open -n -a Alacritty
 # open browser
-cmd + alt - f : open -n -a Firefox
 cmd + alt - g : open -n -a "Google Chrome"
 # balance size of windows
 cmd + alt - b : yabai -m space --balance
@@ -13,10 +12,10 @@ cmd + alt - k : yabai -m window --focus north
 cmd + alt - l : yabai -m window --focus east
 
 # swap managed window
-cmd + alt + shift - w : yabai -m window --swap north
-cmd + alt + shift - a : yabai -m window --swap west
-cmd + alt + shift - s : yabai -m window --swap south
-cmd + alt + shift - d : yabai -m window --swap east
+cmd + alt + shift - h : yabai -m window --swap west
+cmd + alt + shift - j : yabai -m window --swap south
+cmd + alt + shift - k : yabai -m window --swap north
+cmd + alt + shift - l : yabai -m window --swap east
 
 # move managed window
 ctrl + alt - w : yabai -m window --warp north
@@ -31,7 +30,7 @@ shift + cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
 shift + cmd - 4 : yabai -m window --space  4; yabai -m space --focus 4
 shift + cmd - 5 : yabai -m window --space  5; yabai -m space --focus 5
 shift + cmd - 6 : yabai -m window --space  6; yabai -m space --focus 6
-shift + cmd - 6 : yabai -m window --space  7; yabai -m space --focus 7
+shift + cmd - 7 : yabai -m window --space  7; yabai -m space --focus 7
 
 shift + alt - 1 : yabai -m window --space  1
 shift + alt - 2 : yabai -m window --space  2
@@ -39,7 +38,7 @@ shift + alt - 3 : yabai -m window --space  3
 shift + alt - 4 : yabai -m window --space  4
 shift + alt - 5 : yabai -m window --space  5
 shift + alt - 6 : yabai -m window --space  6
-shift + alt - 6 : yabai -m window --space  7
+shift + alt - 7 : yabai -m window --space  7
 
 # resize windows
 ctrl + alt - h : yabai -m window --resize left:-50:0; \
@@ -50,9 +49,6 @@ ctrl + alt - k : yabai -m window --resize top:0:-50; \
                   yabai -m window --resize bottom:0:-50
 ctrl + alt - l : yabai -m window --resize right:50:0; \
                   yabai -m window --resize left:55:0
-
-# Restart Yabai
-ctrl + alt + shift - r : brew services restart yabai
 
 # Spaces
 cmd + alt - 1 : yabai -m space --focus 1

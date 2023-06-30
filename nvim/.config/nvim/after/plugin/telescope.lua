@@ -41,8 +41,9 @@ telescope.setup({
     }
 })
 
-telescope.load_extension("file_browser")
 telescope.load_extension("dap")
+telescope.load_extension("lazygit")
+telescope.load_extension("file_browser")
 
 local builtin = require("telescope.builtin")
 local nmap = require("jero.keymap").nmap

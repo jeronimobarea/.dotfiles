@@ -44,20 +44,25 @@ return packer.startup(function(use)
 
     use({
         "nvim-lualine/lualine.nvim",
-        requires = { "nvim-tree/nvim-web-devicons", opt = true }
+        requires = {
+            "nvim-tree/nvim-web-devicons",
+        }
     })
-
-    use("nvim-tree/nvim-web-devicons")
 
     -- TELESCOPE
     use({
         "nvim-telescope/telescope.nvim",
-        requires = { { "nvim-lua/plenary.nvim" } }
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
     })
 
     use({
         "nvim-telescope/telescope-file-browser.nvim",
-        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
     })
 
     -- GIT
@@ -66,12 +71,9 @@ return packer.startup(function(use)
     use({
         "kdheepak/lazygit.nvim",
         requires = {
-            "nvim-telescope/telescope.nvim",
             "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
         },
-        config = function()
-            require("telescope").load_extension("lazygit")
-        end,
     })
 
     -- TREESITTER
@@ -88,7 +90,9 @@ return packer.startup(function(use)
 
     use({
         "aserowy/tmux.nvim",
-        config = function() return require("tmux").setup() end
+        config = function()
+            return require("tmux").setup()
+        end
     })
 
     -- LSP
@@ -127,17 +131,23 @@ return packer.startup(function(use)
 
     use({
         "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup() end
+        config = function()
+            require("nvim-autopairs").setup()
+        end
     })
 
     -- DEBUGGER
     use({
         "rcarriga/nvim-dap-ui",
-        requires = { "mfussenegger/nvim-dap" },
+        requires = {
+            "mfussenegger/nvim-dap",
+        },
     })
     use({
         "nvim-telescope/telescope-dap.nvim",
-        requires = "nvim-telescope/telescope.nvim",
+        requires = {
+            "nvim-telescope/telescope.nvim",
+        },
     })
 
     -- Automatically set up your configuration after cloning packer.nvim
