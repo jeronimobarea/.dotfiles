@@ -15,7 +15,7 @@ require("mason-lspconfig").setup({
         "solidity",
         "tsserver",
         "rust_analyzer",
-    }
+    },
 })
 
 lsp.set_sign_icons({
@@ -26,10 +26,11 @@ lsp.set_sign_icons({
 })
 
 lsp.on_attach(function(_, bufnr)
-    lsp.default_keymaps({ buffer = bufnr })
+    local opts = { buffer = bufnr }
+
+    lsp.default_keymaps(opts)
     lsp.buffer_autoformat()
 
-    local opts = { buffer = bufnr }
     local lspbuf = vim.lsp.buf
     local nmap = require("jero.keymap").nmap
 
@@ -48,6 +49,7 @@ lspconfig.gopls.setup({
         gopls = {
             analyses = {
                 unusedparams = true,
+                shadow = true,
             },
             staticcheck = true,
             buildFlags = { "-tags=integration" },
@@ -81,7 +83,7 @@ cmp.setup({
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<C-f>"] = cmp_action.luasnip_jump_forward(),
         ["<C-b>"] = cmp_action.luasnip_jump_backward(),
-    }
+    },
 })
 
 vim.diagnostic.config({

@@ -37,8 +37,8 @@ telescope.setup({
         file_browser = {
             hidden = true,
             grouped = true,
-        }
-    }
+        },
+    },
 })
 
 telescope.load_extension("dap")
