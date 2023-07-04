@@ -1,0 +1,19 @@
+theme = "gruvbox"
+
+[editor]
+line-number = "relative"
+mouse = false
+color-modes = true
+bufferline = "always"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
