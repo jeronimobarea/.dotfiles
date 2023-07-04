@@ -11,9 +11,10 @@ hidden = false
 
 [editor.lsp]
 display-messages = true
-display-inlay-hints = true
 
 [editor.statusline]
+left = ["mode", "spacer", "version-control", "spacer", "diagnostics", "file-name"]
+right = ["position-percentage", "position", "spacer"]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
