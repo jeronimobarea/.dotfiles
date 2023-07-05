@@ -2,6 +2,7 @@ theme = "gruvbox_community"
 
 [editor]
 cursorline = true
+true-color = true
 line-number = "relative"
 mouse = false
 color-modes = true

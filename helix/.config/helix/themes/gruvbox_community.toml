@@ -6,3 +6,9 @@ inherits = "gruvbox"
 
 "variable" = "blue1"
 "variable.parameter" = "blue1"
+
+"function.macro" = "red1"
+
+"operator" = "orange1"
+"comment" = "gray1"
+"constant.builtin" = "orange1"
