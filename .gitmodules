@@ -5,3 +5,7 @@
 [submodule "ranger-devicons"]
     path = ranger/.config/ranger/plugins/ranger_devicons
     url = git@github.com:alexanderjeurissen/ranger_devicons.git
+
+[submodule "helix-gruvbox-community"]
+    path = helix/.config/helix/themes/custom/helix_gruvbox_community
+    url = git@github.com:jeronimobarea/helix_gruvbox_community.git

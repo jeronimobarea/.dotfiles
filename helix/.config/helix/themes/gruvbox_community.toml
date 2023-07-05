@@ -1,14 +1,1 @@
-# Author: Jeronimo Barea github.com/jeronimobarea
-# Extends https://github.com/helix-editor/helix/blob/master/runtime/themes/gruvbox.toml
-# Based on https://github.com/gruvbox-community/gruvbox
-
-inherits = "gruvbox"
-
-"variable" = "blue1"
-"variable.parameter" = "blue1"
-
-"function.macro" = "red1"
-
-"operator" = "orange1"
-"comment" = "gray1"
-"constant.builtin" = "orange1"
+custom/helix_gruvbox_community/gruvbox_community.toml
