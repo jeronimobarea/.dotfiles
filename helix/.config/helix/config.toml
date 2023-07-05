@@ -1,6 +1,7 @@
-theme = "gruvbox"
+theme = "gruvbox_community"
 
 [editor]
+cursorline = true
 line-number = "relative"
 mouse = false
 color-modes = true
@@ -18,3 +19,7 @@ right = ["position-percentage", "position", "spacer"]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
+
+[editor.indent-guides]
+render = true
+character = "┆"
