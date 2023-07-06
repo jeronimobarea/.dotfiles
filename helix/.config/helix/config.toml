@@ -24,3 +24,6 @@ mode.select = "SELECT"
 [editor.indent-guides]
 render = true
 character = "┆"
+
+[keys.normal.space]
+q = ":bc"
