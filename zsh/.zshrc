@@ -21,6 +21,8 @@ alias rn="ranger_func"
 
 alias python="python3"
 
+alias toml-merge="$HOME/.dotfiles/utils/toml-merge/toml-merge.ml"
+
 export YABAI_CERT="yabai-cert"
 
 # If you come from bash robbyrussell you might have to change your $PATH.
