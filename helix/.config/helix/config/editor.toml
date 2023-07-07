@@ -1,0 +1,10 @@
+[editor]
+cursorline = true
+true-color = true
+line-number = "relative"
+mouse = false
+color-modes = true
+bufferline = "always"
+
+[editor.file-picker]
+hidden = false

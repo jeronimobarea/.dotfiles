@@ -10,20 +10,3 @@ right = ["position-percentage", "position", "spacer"]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
-
-[editor.lsp]
-display-messages = true
-
-[keys.normal.space]
-q = ":bc"
-
-[editor]
-cursorline = true
-true-color = true
-line-number = "relative"
-mouse = false
-color-modes = true
-bufferline = "always"
-
-[editor.file-picker]
-hidden = false
