@@ -12,7 +12,7 @@ let list_files_by_extension dir ext =
     Sys.readdir dir
     |> Array.to_list
     |> List.filter (fun f -> Filename.extension f = ext)
-    |> List.map (fun f -> Printf.sprintf "%s/%s" dir f) 
+    |> List.map (fun f -> Printf.sprintf "%s/%s" dir f)
   | true  -> []
 
 let read_file f =
@@ -32,16 +32,16 @@ let create_file_with_extension d n c e =
   Printf.printf "saving into file: %s\n" f;
   close_out oc
 
-let run dir_in dir_out =
+let run dir_in dir_out filename =
   match list_files_by_extension dir_in ".toml" with
     | [] -> print_endline "No files found"
     | files ->
         let file_contents = List.map read_file files in
         let merged = merge_files_content (List.rev file_contents) in
-        create_file_with_extension dir_out "config" merged ".toml";
+        create_file_with_extension dir_out filename merged ".toml";
         print_list file_contents
 
 let () =
   match Sys.argv with
-  | [|_; dir_in; dir_out |] -> run dir_in dir_out
+  | [|_; dir_in; dir_out; filename |] -> run dir_in dir_out filename
   | _ -> print_endline "Please provide a directory as a command-line argument"
