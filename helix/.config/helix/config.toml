@@ -1,3 +1,4 @@
+# FILE GENERATED USING toml-merge: github.com/jeronimobarea/toml-merge
 theme = "gruvbox_community"
 
 [editor.indent-guides]
