@@ -14,12 +14,14 @@ mode.insert = "INSERT"
 mode.select = "SELECT"
 
 [editor]
-cursorline = true
-true-color = true
+scrolloff = 8
+rulers = [80]
 line-number = "relative"
+cursorline = true
+bufferline = "always"
+true-color = true
 mouse = false
 color-modes = true
-bufferline = "always"
 
 [editor.file-picker]
 hidden = false
