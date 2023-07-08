@@ -11,12 +11,6 @@ mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
 
-[editor.lsp]
-display-messages = true
-
-[keys.normal.space]
-q = ":bc"
-
 [editor]
 cursorline = true
 true-color = true
@@ -27,3 +21,9 @@ bufferline = "always"
 
 [editor.file-picker]
 hidden = false
+
+[editor.lsp]
+display-messages = true
+
+[keys.normal.space]
+q = ":bc"
