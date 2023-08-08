@@ -6,7 +6,7 @@ character = "┆"
 
 [editor.statusline]
 left = ["mode", "spacer", "version-control", "spacer", "diagnostics", "file-name"]
-right = ["position-percentage", "position", "spacer"]
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
+right = ["position-percentage", "spacer"]
+mode.normal = "N"
+mode.insert = "I"
+mode.select = "S"

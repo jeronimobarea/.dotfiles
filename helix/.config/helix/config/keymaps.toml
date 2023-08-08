@@ -1,2 +1,7 @@
+[keys.normal]
+"#" = "toggle_comments"
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+
 [keys.normal.space]
 q = ":bc"
