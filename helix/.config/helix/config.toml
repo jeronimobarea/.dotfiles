@@ -30,9 +30,11 @@ hidden = false
 display-messages = true
 
 [keys.normal]
+"esc" = [ "normal_mode", ":format" , ":write" ] # For quick saving
 "#" = "toggle_comments"
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
 
 [keys.normal.space]
 q = ":bc"
+o = "file_picker_in_current_buffer_directory"
