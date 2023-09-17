@@ -23,6 +23,8 @@ alias python="python3"
 
 alias toml-merge="$HOME/.dotfiles/utils/toml-merge/toml-merge.ml"
 
+if [ "$TMUX" = "" ]; then tmux new -As0; fi
+
 export YABAI_CERT="yabai-cert"
 
 # If you come from bash robbyrussell you might have to change your $PATH.
@@ -138,3 +140,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -d "$HOME/.dotfiles/thunes/.zshrc" ]; then
   source "$HOME/.dotfiles/thunes/.zshrc"
 fi
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
