@@ -40,7 +40,7 @@ return packer.startup(function(use)
     use("wbthomason/packer.nvim")
 
     -- THEME
-    use("gruvbox-community/gruvbox")
+    use("ellisonleao/gruvbox.nvim")
 
     use({
         "nvim-lualine/lualine.nvim",
