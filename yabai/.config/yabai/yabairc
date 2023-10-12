@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-PADDING=0
+PADDING=5
 
 # Unload the macOS WindowManager process
 launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist > /dev/null 2>&1 &
