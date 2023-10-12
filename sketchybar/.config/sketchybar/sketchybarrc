@@ -55,5 +55,6 @@ source "$ITEM_DIR/control_center.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
+sketchybar --hotload true
 
 echo "sketchybar configuation loaded.."
