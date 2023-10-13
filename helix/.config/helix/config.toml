@@ -8,7 +8,7 @@ character = "┆"
 
 [editor.statusline]
 left = ["mode", "spacer", "version-control", "spacer", "diagnostics", "file-name"]
-right = ["position-percentage", "spacer"]
+right = ["position-percentage", "spacer", "position"]
 mode.normal = "N"
 mode.insert = "I"
 mode.select = "S"
