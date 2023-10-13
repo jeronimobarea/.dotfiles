@@ -32,7 +32,7 @@ VOLUME_10=􀊡
 VOLUME_0=􀊣
 
 # Network Icons
-WIFI_CONNECTED=直
+WIFI_CONNECTED=􀙇
 WIFI_NOTCONNECTED=󰖪
 
 # PC Components
