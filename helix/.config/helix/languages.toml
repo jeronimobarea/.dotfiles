@@ -1,0 +1,3 @@
+[[language]]
+name = "go"
+config = { "formatting.gofumpt" = true, "buildFlags" = ["-tags=integration"] }
