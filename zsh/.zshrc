@@ -130,8 +130,9 @@ source $ZSH/oh-my-zsh.sh
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-alias thunes_rds_sso=~/bin/aws-rds-sso.sh
 
 # opam configuration
 [[ ! -r /Users/jeronimobarea/.opam/opam-init/init.zsh ]] || source /Users/jeronimobarea/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-which plenv > /dev/null && eval "$(plenv init -)"
+
+# THUNES
+source /thunes/.zshrc

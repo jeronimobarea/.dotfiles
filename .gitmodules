@@ -13,3 +13,7 @@
 [submodule "toml-merge"]
     path = utils/toml-merge
     url = git@github.com:jeronimobarea/toml-merge.git
+
+[submodule "thunes"]
+    path = thunes
+    url = git@github.com:jeronimobarea/thunes.git
