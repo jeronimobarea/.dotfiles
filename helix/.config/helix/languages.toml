@@ -1,3 +1,2 @@
-[[language]]
-name = "go"
+[language-server.gopls]
 config = { "formatting.gofumpt" = true, "buildFlags" = ["-tags=integration"] }
