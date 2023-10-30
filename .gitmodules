@@ -19,5 +19,5 @@
     url = git@github.com:jeronimobarea/thunes.git
 
 [submodule "SketchyBarHelper"]
-    path = thunes
+    path = sketchybar/.config/sketchybar/helper/SketchyBarHelper
     url = git@github.com:FelixKratz/SketchyBarHelper.git
