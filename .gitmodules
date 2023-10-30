@@ -17,3 +17,7 @@
 [submodule "thunes"]
     path = thunes
     url = git@github.com:jeronimobarea/thunes.git
+
+[submodule "SketchyBarHelper"]
+    path = thunes
+    url = git@github.com:FelixKratz/SketchyBarHelper.git

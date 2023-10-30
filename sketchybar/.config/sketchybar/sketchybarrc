@@ -11,6 +11,15 @@ PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are st
 FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
 PADDINGS=3 # All paddings use this value (icon, label, background)
 
+# Setting up and starting the helper process
+HELPER=git.felix.helper
+killall helper
+(cd $CONFIG_DIR/helper && make)
+$CONFIG_DIR/helper/helper $HELPER > /dev/null 2>&1 &
+
+# Unload the macOS on screen indicator overlay for volume change
+launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
+
 # Setting up the general bar appearance of the bar
 bar=(
   height=36
@@ -52,6 +61,10 @@ source "$ITEM_DIR/front_app.sh"
 # Right
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/control_center.sh"
+source "$ITEM_DIR/disk.sh"
+source "$ITEM_DIR/ram.sh"
+source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/network.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
