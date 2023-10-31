@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 disk=(
 	background.padding_left=0

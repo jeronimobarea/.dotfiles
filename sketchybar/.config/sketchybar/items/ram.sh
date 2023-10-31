@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 memory=(
 	background.padding_left=0
@@ -9,4 +9,4 @@ memory=(
 )
 
 sketchybar --add item memory right \
-	--set disk "${memory[@]}"
+	--set memory "${memory[@]}"
