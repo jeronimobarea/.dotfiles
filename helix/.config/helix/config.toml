@@ -4,7 +4,7 @@ theme = "gruvbox_community"
 
 [editor.indent-guides]
 render = true
-character = "┆"
+character = "│"
 
 [editor.statusline]
 left = ["mode", "spacer", "version-control", "spacer", "diagnostics", "file-name"]
