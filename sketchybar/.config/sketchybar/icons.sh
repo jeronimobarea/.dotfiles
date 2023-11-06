@@ -34,6 +34,7 @@ VOLUME_0=􀊣
 # Network Icons
 WIFI_CONNECTED=􀙇
 WIFI_NOTCONNECTED=󰖪
+WIFI_VPN=
 
 # PC Components
 CPU=

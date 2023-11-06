@@ -8,12 +8,17 @@ source "$CONFIG_DIR/colors.sh"
 
 update() {
   INFO="$(/System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I | awk -F ' SSID: '  '/ SSID: / {print $2}')"
+  IS_VPN=$(scutil --nwi | grep -m1 'utun' | awk '{ print $1 }')
   LABEL="Not connected"
 
   ICON=$WIFI_NOTCONNECTED
   COLOR=$GV_RED
 
-  if [ "$INFO" != "" ]; then
+  if [[ $IS_VPN != "" ]]; then
+  	COLOR=$CYAN
+  	ICON=$WIFI_VPN
+  	LABEL="VPN"
+  elif [ "$INFO" != "" ]; then
     LABEL=$INFO
     ICON=$WIFI_CONNECTED
     COLOR=$GV_BLUE
