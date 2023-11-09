@@ -10,10 +10,6 @@
     path = helix/.config/helix/themes/custom/helix_gruvbox_community
     url = git@github.com:jeronimobarea/helix_gruvbox_community.git
 
-[submodule "toml-merge"]
-    path = utils/toml-merge
-    url = git@github.com:jeronimobarea/toml-merge.git
-
 [submodule "thunes"]
     path = thunes
     url = git@github.com:jeronimobarea/thunes.git

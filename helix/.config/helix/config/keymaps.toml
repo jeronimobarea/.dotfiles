@@ -1,8 +1,0 @@
-[keys.normal]
-"#" = "toggle_comments"
-"{" = "goto_prev_paragraph"
-"}" = "goto_next_paragraph"
-
-[keys.normal.space]
-q = ":bc"
-o = "file_picker_in_current_buffer_directory"

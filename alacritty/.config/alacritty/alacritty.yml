@@ -1,9 +1,9 @@
 window:
   dynamic_padding: true
   padding:
-    x: 2
-    y: 2
-  decorations: none
+    x: 4
+    y: 4
+  decorations: buttonless
   opacity: 0.95
   dynamic_title: false
 scrolling:

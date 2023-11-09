@@ -135,4 +135,6 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -r /Users/jeronimobarea/.opam/opam-init/init.zsh ]] || source /Users/jeronimobarea/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # THUNES
-source "$HOME/.dotfiles/thunes/.zshrc"
+if [ -d "$HOME/.dotfiles/thunes/.zshrc" ]; then
+  source "$HOME/.dotfiles/thunes/.zshrc"
+fi
