@@ -138,3 +138,6 @@ source $ZSH/oh-my-zsh.sh
 if [ -d "$HOME/.dotfiles/thunes/.zshrc" ]; then
   source "$HOME/.dotfiles/thunes/.zshrc"
 fi
+
+# Solana
+export PATH="/Users/jeronimobarea/.local/share/solana/install/active_release/bin:$PATH"
