@@ -3,6 +3,7 @@
 wifi=(
   background.corner_radius=12
   background.padding_left=2
+  background.padding_right=8
   script="$PLUGIN_DIR/wifi.sh"
 )
 

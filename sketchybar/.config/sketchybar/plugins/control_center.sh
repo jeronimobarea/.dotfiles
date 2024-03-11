@@ -11,5 +11,5 @@ divider=(
 	background.padding_right=10
 )
 
-sketchybar --add bracket status brew wifi battery volume_icon \
+sketchybar --add bracket status wifi battery \
 	--set status "${divider[@]}"
