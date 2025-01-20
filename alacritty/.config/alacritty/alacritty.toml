@@ -1,5 +1,5 @@
-import = ["/Users/jeronimobarea/.config/alacritty/themes/themes/gruvbox_dark.toml"]
-live_config_reload = true
+general.import = ["/Users/jeronimobarea/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+general.live_config_reload = true
 
 [font]
 size = 12.0
@@ -31,16 +31,21 @@ multiplier = 3
 [selection]
 save_to_clipboard = true
 
-[shell]
+[terminal.shell]
 args = ["-l", "-c", "tmux"]
 program = "/bin/zsh"
 
 [window]
-decorations = "buttonless"
+# decorations = "full"
+startup_mode = "SimpleFullscreen"
 dynamic_padding = true
 dynamic_title = false
 opacity = 0.95
 
 [window.padding]
-x = 4
-y = 4
+x = 10
+y = 10
+
+[window.dimensions]
+columns = 200
+lines = 60

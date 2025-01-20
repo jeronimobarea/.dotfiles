@@ -3,7 +3,7 @@ window:
   padding:
     x: 4
     y: 4
-  decorations: buttonless
+  decorations: full
   opacity: 0.95
   dynamic_title: false
 scrolling:
