@@ -2,10 +2,6 @@
     path = alacritty/.config/alacritty/themes
     url = git@github.com:alacritty/alacritty-theme.git
 
-[submodule "ranger-devicons"]
-    path = ranger/.config/ranger/plugins/ranger_devicons
-    url = git@github.com:alexanderjeurissen/ranger_devicons.git
-
 [submodule "helix-gruvbox-community"]
     path = helix/.config/helix/themes/custom/helix_gruvbox_community
     url = git@github.com:jeronimobarea/helix_gruvbox_community.git
@@ -13,7 +9,3 @@
 [submodule "thunes"]
     path = thunes
     url = git@github.com:jeronimobarea/thunes.git
-
-[submodule "SketchyBarHelper"]
-    path = sketchybar/.config/sketchybar/helper/SketchyBarHelper
-    url = git@github.com:FelixKratz/SketchyBarHelper.git
