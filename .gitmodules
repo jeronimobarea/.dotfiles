@@ -1,5 +1,5 @@
 [submodule "alacritty-themes"]
-    path = alacritty/.config/alacritty/themes
+    path = alacritty/.config/alacritty/themes/themes
     url = git@github.com:alacritty/alacritty-theme.git
 
 [submodule "helix-gruvbox-community"]
