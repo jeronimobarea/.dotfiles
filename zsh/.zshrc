@@ -8,22 +8,7 @@ alias la="ls -a"
 alias lla="ls -la"
 alias lt="ls --tree"
 
-function ranger_func {
-    ranger $*
-    local quit_cd_wd_file="$HOME/.ranger_quit_cd_wd"
-    if [ -s "$quit_cd_wd_file" ]; then
-        cd "$(cat $quit_cd_wd_file)"
-        true > "$quit_cd_wd_file"
-    fi
-}
-
-alias rn="ranger_func"
-
 alias python="python3"
-
-alias toml-merge="$HOME/.dotfiles/utils/toml-merge/toml-merge.ml"
-
-export YABAI_CERT="yabai-cert"
 
 # If you come from bash robbyrussell you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH

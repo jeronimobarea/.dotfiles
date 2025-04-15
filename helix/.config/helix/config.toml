@@ -1,6 +1,6 @@
 # FILE GENERATED USING toml-merge: github.com/jeronimobarea/toml-merge
 
-theme = "gruvbox_community"
+theme = "zenburn"
 
 [editor.indent-guides]
 render = true
