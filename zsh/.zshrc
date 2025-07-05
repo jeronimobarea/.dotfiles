@@ -1,5 +1,5 @@
-alias vim="nvim"
-alias vi="nvim"
+# alias vim="nvim"
+# alias vi="nvim"
 alias cat="bat"
 
 alias ls="lsd"
@@ -126,3 +126,5 @@ fi
 
 # Solana
 export PATH="/Users/jeronimobarea/.local/share/solana/install/active_release/bin:$PATH"
+
+. "$HOME/.local/bin/env"
