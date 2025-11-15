@@ -34,9 +34,6 @@ Palette definitions (currently Zenburn) with shared ANSI colors and per-tool ove
 ### `kbrd_layouts` & `screenshots`
 Hardware layout JSON exports (Ferris compact split, Kinesis variants) plus layer screenshots referenced in documentation or for quick lookup when flashing firmware.
 
-### `thunes` (optional)
-Shell snippets for THUNES tooling sourced conditionally from `zsh/lib/40-extras.zsh`. Keep organization-specific secrets out of the repo; only helper scripts/config live here.
-
 ## Using these dotfiles
 1. Clone the repo and `cd` into it.
 2. Run `./scripts/setup.sh` to install (or bootstrap) Homebrew plus all required CLI/cask dependencies from `Brewfile`—Alacritty, Helix, tmux, lsd, bat, fzf, stow, ripgrep, and the SFMono Nerd Font.
@@ -47,3 +44,11 @@ Shell snippets for THUNES tooling sourced conditionally from `zsh/lib/40-extras.
 5. Restart Alacritty/tmux/Helix (or use `tmux source-file ~/.tmux.conf`, `hx --health`, etc.) to pick up changes.
 
 Keyboard layout images live under `screenshots/layer_*.PNG` for quick reference, and hardware JSONs can be flashed through their respective keyboard tooling.
+
+## Keyboard layouts
+
+![Layer 0](screenshots/layer_0.PNG)
+![Layer 1](screenshots/layer_1.PNG)
+![Layer 2](screenshots/layer_2.PNG)
+![Layer 3](screenshots/layer_3.PNG)
+![Layer 4](screenshots/layer_4.PNG)
