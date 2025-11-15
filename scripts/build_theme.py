@@ -34,6 +34,8 @@ def write_tmux_theme(theme: str, palette: dict[str, str], settings: dict[str, st
     )
     colors = {key: resolve_color(settings[key], palette) for key in required_keys}
 
+    accent_color = palette.get("accent", colors["status_fg"])
+
     tmux_lines = [
         f"# Generated from {source.relative_to(REPO_ROOT)}; do not edit directly.",
         f"set -g status-bg \"{colors['status_bg']}\"",
@@ -48,6 +50,20 @@ def write_tmux_theme(theme: str, palette: dict[str, str], settings: dict[str, st
         f"set -g status-left-length 40",
         f"set -g status-right-length 120",
         "set -g status-justify left",
+        (
+            "set -g window-status-style bg=\""
+            f"{colors['status_bg']}"
+            "\",fg=\""
+            f"{colors['status_inactive_fg']}"
+            "\"",
+        ),
+        (
+            "set -g window-status-current-style bg=\""
+            f"{colors['status_bg']}"
+            "\",fg=\""
+            f"{accent_color}"
+            "\",bold",
+        ),
         (
             "set -g status-left \"#[fg="
             f"{colors['pane_active_border']}",
