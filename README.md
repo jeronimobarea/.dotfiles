@@ -39,10 +39,11 @@ Shell snippets for THUNES tooling sourced conditionally from `zsh/lib/40-extras.
 
 ## Using these dotfiles
 1. Clone the repo and `cd` into it.
-2. Run `scripts/refresh_configs.sh` (with `stow` installed) to symlink modules into your home directory, or export `DOTFILES_MODULES="alacritty helix tmux zsh"` to link a subset.
-3. Generate derived files when needed:
+2. Run `./scripts/setup.sh` to install (or bootstrap) Homebrew plus all required CLI/cask dependencies from `Brewfile`—Alacritty, Helix, tmux, lsd, bat, fzf, stow, ripgrep, and the SFMono Nerd Font.
+3. Run `scripts/refresh_configs.sh` (with `stow` installed by the previous step) to symlink modules into your home directory, or export `DOTFILES_MODULES="alacritty helix tmux zsh"` to link a subset.
+4. Generate derived files when needed:
    - `python3 scripts/build_theme.py` to refresh Zenburn variants after palette tweaks.
    - `bash scripts/build_helix_config.sh` after changing files in `helix/config.d`.
-4. Restart Alacritty/tmux/Helix (or use `tmux source-file ~/.tmux.conf`, `hx --health`, etc.) to pick up changes.
+5. Restart Alacritty/tmux/Helix (or use `tmux source-file ~/.tmux.conf`, `hx --health`, etc.) to pick up changes.
 
 Keyboard layout images live under `screenshots/layer_*.PNG` for quick reference, and hardware JSONs can be flashed through their respective keyboard tooling.
