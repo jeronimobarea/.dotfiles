@@ -1,0 +1,2 @@
+# Compatibility theme so custom overlays can inherit the historical default_dark colors.
+inherits = "base16_default_dark"

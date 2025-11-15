@@ -1,0 +1,2 @@
+# Generated into helix/.config/helix/config.toml via scripts/build_helix_config.sh
+theme = "zenburn"

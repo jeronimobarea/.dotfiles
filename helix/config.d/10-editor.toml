@@ -1,8 +1,3 @@
-# FILE GENERATED FROM helix/config.d -- DO NOT EDIT
-
-# Generated into helix/.config/helix/config.toml via scripts/build_helix_config.sh
-theme = "zenburn"
-
 [editor]
 scrolloff = 8
 rulers = [80]
@@ -29,17 +24,3 @@ hidden = false
 
 [editor.lsp]
 display-messages = true
-
-[keys.normal]
-"esc" = ["normal_mode", ":format", ":write"]
-"#" = "toggle_comments"
-"{" = "goto_prev_paragraph"
-"}" = "goto_next_paragraph"
-
-[keys.normal.space]
-q = ":bc"
-o = "file_picker_in_current_buffer_directory"
-
-[keys.normal.space.w]
-r = ":rla"
-

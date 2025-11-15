@@ -1,0 +1,42 @@
+# Generated from themes/zenburn.toml; do not edit directly.
+inherits = "default_dark"
+
+"ui.background" = { bg = "bg", fg = "fg" }
+"ui.cursor" = { bg = "cursor", fg = "bg" }
+"ui.cursorline" = { bg = "bg_dim" }
+"ui.selection" = { bg = "selection" }
+"ui.menu.selected" = { bg = "accent", fg = "bg" }
+"ui.statusline" = { fg = "fg", bg = "bg_alt" }
+"ui.popup" = { bg = "bg_alt" }
+"ui.help" = { fg = "fg", bg = "bg_alt" }
+"ui.linenr" = "fg_dim"
+"ui.linenr.selected" = "fg"
+"ui.virtual.ruler" = { bg = "bg_alt" }
+"comment" = "fg_dim"
+"keyword" = "accent"
+"string" = "green"
+"constant" = "orange"
+"variable" = "fg"
+"variable.builtin" = "yellow"
+"function" = "blue"
+"diagnostic.error" = "red"
+"diagnostic.warning" = "yellow"
+"diagnostic.info" = "blue"
+"diagnostic.hint" = "cyan"
+
+[palette]
+accent = "#f0dfaf"
+bg = "#3f3f3f"
+bg_alt = "#2b2b2b"
+bg_dim = "#303030"
+blue = "#6ca0a3"
+cursor = "#ffffd7"
+cyan = "#8cd0d3"
+fg = "#dcdccc"
+fg_dim = "#a6a39f"
+green = "#7f9f7f"
+magenta = "#dc8cc3"
+orange = "#dfaf8f"
+red = "#cc9393"
+selection = "#4f4f4f"
+yellow = "#f0dfaf"
