@@ -47,7 +47,7 @@ def write_tmux_theme(theme: str, palette: dict[str, str], settings: dict[str, st
         f"set -g display-panes-colour \"{colors['pane_border']}\"",
         f"set -g status-left-length 40",
         f"set -g status-right-length 120",
-        "set -g status-justify centre",
+        "set -g status-justify left",
         (
             "set -g status-left \"#[fg="
             f"{colors['pane_active_border']}",

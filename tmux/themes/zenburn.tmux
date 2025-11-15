@@ -10,7 +10,7 @@ set -g display-panes-active-colour "#7f9f7f"
 set -g display-panes-colour "#4f4f4f"
 set -g status-left-length 40
 set -g status-right-length 120
-set -g status-justify centre
+set -g status-justify left
 set -g status-left "#[fg=#7f9f7f,bold]#S #[fg=#a6a39f]|"
 set -g status-right "#[fg=#a6a39f]%Y-%m-%d #[fg=#7f9f7f]%H:%M #[fg=#a6a39f]#H"
 set -g bell-action any
