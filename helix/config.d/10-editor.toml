@@ -13,19 +13,24 @@ auto-format = true
 render = true
 character = "│"
 
+[editor.whitespace]
+render = { trailing = true }
+
 [editor.statusline]
 left = ["mode", "spacer", "version-control", "spacer", "diagnostics", "file-name"]
-right = ["position-percentage", "spacer", "position"]
+right = ["position-percentage", "spacer", "position", "spacer", "file-encoding"]
 mode.normal = "N"
 mode.insert = "I"
 mode.select = "S"
 
 [editor.file-picker]
-hidden = true
+hidden = false
 
 [editor.lsp]
 display-messages = true
 display-inlay-hints = true
+auto-signature-help = true
+display-signature-help-docs = true
 
 [editor.inline-diagnostics]
 cursor-line = "warning"
