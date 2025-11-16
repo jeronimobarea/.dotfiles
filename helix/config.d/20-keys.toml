@@ -1,5 +1,4 @@
 [keys.normal]
-"esc" = ["normal_mode", ":format", ":write"]
 "#" = "toggle_comments"
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"

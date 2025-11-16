@@ -7,6 +7,7 @@ bufferline = "always"
 true-color = true
 mouse = false
 color-modes = true
+auto-format = true
 
 [editor.indent-guides]
 render = true
@@ -20,7 +21,12 @@ mode.insert = "I"
 mode.select = "S"
 
 [editor.file-picker]
-hidden = false
+hidden = true
 
 [editor.lsp]
 display-messages = true
+display-inlay-hints = true
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+other-lines = "hint"

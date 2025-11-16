@@ -12,6 +12,7 @@ bufferline = "always"
 true-color = true
 mouse = false
 color-modes = true
+auto-format = true
 
 [editor.indent-guides]
 render = true
@@ -25,13 +26,17 @@ mode.insert = "I"
 mode.select = "S"
 
 [editor.file-picker]
-hidden = false
+hidden = true
 
 [editor.lsp]
 display-messages = true
+display-inlay-hints = true
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+other-lines = "hint"
 
 [keys.normal]
-"esc" = ["normal_mode", ":format", ":write"]
 "#" = "toggle_comments"
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
