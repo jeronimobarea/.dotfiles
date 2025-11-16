@@ -33,8 +33,8 @@ _fzf_spawn_tmux_helpers() {
 
   if command -v codex >/dev/null 2>&1; then
     ai_cmd=codex
-  elif command -v gemini-cli >/dev/null 2>&1; then
-    ai_cmd=gemini-cli
+  elif command -v gemini >/dev/null 2>&1; then
+    ai_cmd=gemini
   fi
 
   if [[ -n $ai_cmd ]]; then
