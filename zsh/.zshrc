@@ -16,3 +16,7 @@ for module in "${ZSH_DOTFILES_MODULES[@]}"; do
 done
 
 unset module module_file
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/jeronimo.lucas/.local/bin:$PATH"

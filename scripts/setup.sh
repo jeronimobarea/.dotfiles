@@ -36,9 +36,15 @@ main() {
 
   echo "Installing dependencies from Brewfile..."
   brew update
-  brew tap homebrew/cask-fonts >/dev/null 2>&1 || true
   brew bundle --file "$BREWFILE" --no-lock
   echo "All dependencies installed."
+
+  # Bootstrap TPM (tmux plugin manager) if not present
+  local tpm_dir="$HOME/.tmux/plugins/tpm"
+  if [[ ! -d "$tpm_dir" ]]; then
+    echo "Installing TPM..."
+    git clone https://github.com/tmux-plugins/tpm "$tpm_dir"
+  fi
 }
 
 main "$@"

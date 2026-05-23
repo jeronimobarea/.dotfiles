@@ -1,0 +1,13 @@
+# Generated theme outputs
+tmux/themes/
+alacritty/.config/alacritty/palettes/
+helix/.config/helix/themes/zenburn.toml
+
+# Generated helix config
+helix/.config/helix/config.toml
+
+# Runtime artifacts
+scripts/aws_sso_refresh.log
+
+# Local Claude settings (machine-specific)
+.claude/settings.local.json

@@ -3,6 +3,10 @@
 
 from __future__ import annotations
 
+try:
+    import tomllib
+except ModuleNotFoundError:
+    import tomli as tomllib
 from pathlib import Path
 
 
@@ -16,7 +20,7 @@ def resolve_color(value: str, palette: dict[str, str]) -> str:
         return value.lower()
     try:
         return palette[value].lower()
-    except KeyError as exc:  # pragma: no cover - configuration error helper
+    except KeyError as exc:
         raise SystemExit(f"Unknown color '{value}' in palette") from exc
 
 
@@ -180,7 +184,8 @@ def main() -> None:
         raise SystemExit("No themes directory found")
 
     for palette_file in sorted(THEMES_DIR.glob("*.toml")):
-        data = parse_simple_toml(palette_file)
+        with open(palette_file, "rb") as f:
+            data = tomllib.load(f)
         palette = {key: value.lower() for key, value in data["palette"].items()}
         ansi = data["ansi"]
         tmux_settings = data["tmux"]
@@ -190,29 +195,6 @@ def main() -> None:
         write_tmux_theme(theme_name, palette, tmux_settings, palette_file)
         write_alacritty_theme(theme_name, palette, ansi, palette_file)
         write_helix_theme(theme_name, palette, helix_cfg, palette_file)
-
-
-def parse_simple_toml(path: Path) -> dict[str, dict[str, str]]:
-    root: dict[str, dict[str, str]] = {}
-    current_stack: list[str] = []
-    current_table = root
-
-    for raw_line in path.read_text().splitlines():
-        line = raw_line.strip()
-        if not line:
-            continue
-        if line.startswith("[") and line.endswith("]"):
-            current_stack = [segment.strip() for segment in line[1:-1].split(".")]
-            current_table = root
-            for segment in current_stack:
-                current_table = current_table.setdefault(segment, {})
-            continue
-        if "=" not in line:
-            continue
-        key, value = [part.strip() for part in line.split("=", 1)]
-        value = value.strip().strip('"')
-        current_table[key] = value
-    return root
 
 
 if __name__ == "__main__":
