@@ -1,7 +1,7 @@
 # FILE GENERATED FROM helix/config.d -- DO NOT EDIT
 
 # Generated into helix/.config/helix/config.toml via scripts/build_helix_config.sh
-theme = "zenburn"
+theme = "zenburn-dark"
 
 [editor]
 scrolloff = 8
