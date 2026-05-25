@@ -13,6 +13,7 @@ brew "lazygit"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "direnv"
+brew "terminal-notifier"
 
 cask "alacritty"
 cask "font-0xproto-nerd-font"
