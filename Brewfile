@@ -15,4 +15,4 @@ brew "zsh-syntax-highlighting"
 brew "direnv"
 
 cask "alacritty"
-cask "font-sf-mono-nerd-font"
+cask "font-0xproto-nerd-font"
