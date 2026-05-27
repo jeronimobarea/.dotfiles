@@ -99,7 +99,8 @@ _workspace_propagate_env() {
   local tmux_bin="$1"
   local var
   for var in CLAUDE_CODE_USE_BEDROCK ANTHROPIC_MODEL ANTHROPIC_SMALL_FAST_MODEL \
-             CLAUDE_CODE_MAX_OUTPUT_TOKENS MAX_THINKING_TOKENS AWS_PROFILE; do
+             ANTHROPIC_BETAS CLAUDE_CODE_MAX_OUTPUT_TOKENS MAX_THINKING_TOKENS \
+             AWS_PROFILE; do
     if [[ -n ${(P)var-} ]]; then
       "$tmux_bin" set-environment -g "$var" "${(P)var}"
     fi
@@ -114,14 +115,12 @@ _workspace_persistent_cmd() {
 
 # Build the standard window set for a single project inside an existing session.
 _workspace_build_session() {
-  local tmux_bin="$1" session="$2" project_path="$3" repos_root="$4"
+  local tmux_bin="$1" session="$2" project_path="$3"
   local shell_cmd="${SHELL:-/bin/zsh}"
   local lazygit_bin
   lazygit_bin="$(_resolve_bin lazygit)"
 
-  "$tmux_bin" new-session -d -s "$session" -c "$repos_root"   -n "claude-root" \
-    "$(_workspace_persistent_cmd claude)"
-  "$tmux_bin" new-window  -t "$session" -c "$project_path" -n "claude" \
+  "$tmux_bin" new-session -d -s "$session" -c "$project_path" -n "claude" \
     "$(_workspace_persistent_cmd claude)"
   "$tmux_bin" new-window  -t "$session" -c "$project_path" -n "edit" \
     "$(_workspace_persistent_cmd 'hx .')"
@@ -130,7 +129,7 @@ _workspace_build_session() {
     "$tmux_bin" new-window -t "$session" -c "$project_path" -n "git" \
       "$(_workspace_persistent_cmd "$lazygit_bin")"
   fi
-  "$tmux_bin" select-window -t "${session}:claude-root"
+  "$tmux_bin" select-window -t "${session}:claude"
 }
 
 workspace() {
@@ -176,7 +175,7 @@ workspace() {
   for p in "${project_paths[@]}"; do
     session="${i}-$(_workspace_session_name "${p:t}")"
     if ! "$tmux_bin" has-session -t "=$session" 2>/dev/null; then
-      _workspace_build_session "$tmux_bin" "$session" "$p" "$root"
+      _workspace_build_session "$tmux_bin" "$session" "$p"
     fi
     [[ -z $first_session ]] && first_session="$session"
     (( i++ ))
@@ -203,6 +202,9 @@ workspace() {
   fi
 }
 
+# Repos that should lead the boot order; the rest follow alphabetically.
+typeset -ga WORKSPACE_PRIORITY=(payments api-gateway)
+
 # One-click boot: open a session per git repo under PROJECTS_ROOT.
 boot() {
   local root="${PROJECTS_ROOT:-$HOME/code}"
@@ -222,7 +224,20 @@ boot() {
     return 1
   fi
 
-  workspace "${repos[@]}"
+  local -a ordered rest
+  local pinned name
+  for pinned in "${WORKSPACE_PRIORITY[@]}"; do
+    if (( ${repos[(Ie)$pinned]} )); then
+      ordered+=("$pinned")
+    fi
+  done
+  for name in "${repos[@]}"; do
+    if (( ! ${ordered[(Ie)$name]} )); then
+      rest+=("$name")
+    fi
+  done
+
+  workspace "${ordered[@]}" "${rest[@]}"
 }
 
 # ---------------------------------------------------------------------------
@@ -350,4 +365,43 @@ verify() {
     "$tmux_bin" attach-session -t "${_FLEET_SESSION}" \;\
       select-window -t "${_FLEET_SESSION}:${win_name}"
   fi
+}
+
+# wt: create a sibling worktree for parallel work and cd into it.
+#
+# Usage:
+#   wt <branch>            create new branch off origin/HEAD in ../<repo>-<branch-tail>
+#   wt <branch> <base>     same, but branch off <base> instead of origin/HEAD
+#
+# The branch tail (everything after the last `/`) is used as the directory
+# suffix to keep paths short: `wt CO-1234/fix-foo` lands in `../<repo>-fix-foo`.
+wt() {
+  if (( $# == 0 )); then
+    echo "Usage: wt <branch> [base-ref]" >&2
+    return 1
+  fi
+
+  if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo "wt: not in a git repository" >&2
+    return 1
+  fi
+
+  local branch="$1" base="${2:-}" repo branch_tail target
+  repo="$(basename "$(git rev-parse --show-toplevel)")"
+  branch_tail="${branch##*/}"
+  target="../${repo}-${branch_tail}"
+
+  if [[ -z $base ]]; then
+    base="$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')"
+    [[ -z $base ]] && base="$(git rev-parse --abbrev-ref HEAD)"
+  fi
+
+  if [[ -d $target ]]; then
+    echo "wt: $target already exists; cd-ing into it" >&2
+    builtin cd -- "$target" || return $?
+    return 0
+  fi
+
+  git worktree add -b "$branch" "$target" "$base" || return $?
+  builtin cd -- "$target"
 }
