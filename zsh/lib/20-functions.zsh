@@ -108,9 +108,10 @@ _workspace_propagate_env() {
 }
 
 # Wrap a command so the window survives the command exiting (drop to shell).
+# Runs the app once, then loops a shell so the window never closes on exit.
 _workspace_persistent_cmd() {
   local cmd="$1"
-  printf '%s; exec %s -l\n' "$cmd" "${SHELL:-/bin/zsh}"
+  printf '%s; while true; do %s -l; done\n' "$cmd" "${SHELL:-/bin/zsh}"
 }
 
 # Build the standard window set for a single project inside an existing session.
