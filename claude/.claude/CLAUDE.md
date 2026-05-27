@@ -57,7 +57,7 @@ When the user asks to start a new task and another is in progress, default to su
 
 ## Toolchain conventions
 
-- **Go**: gofumpt for formatting, `golangci-lint run` for lint, `go vet ./...` for static checks. Tests run with `go test ./...`.
+- **Go**: gofumpt for formatting, `golangci-lint run` for lint, `go vet ./...` for static checks. Tests run with `go test -race -cover ./...`. When adding or modifying logic, verify coverage didn't regress for touched packages: `go test -race -coverprofile=coverage.out ./path/to/pkg/...` then `go tool cover -func=coverage.out`. Do not consider a feature complete if new code paths have no tests.
 - **TypeScript**: detect package manager from lockfile; always run `tsc --noEmit` (or the `typecheck` script) — never skip type-checking on TS changes.
 - **Git**: never push without explicit ask. Force-push only when user explicitly says so. Commits use Conventional Commits style (`feat(...)`, `fix(...)`).
 
